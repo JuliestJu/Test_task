@@ -12,6 +12,7 @@
 		9E4A869CAF9B8E0ABA8A1564 /* Pods_Anoda_Test_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9E47383FEB307B34398B2E /* Pods_Anoda_Test_TaskTests.framework */; };
 		CD66DDBF248E315E00E08CA7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66DDBE248E315E00E08CA7 /* DataModel.swift */; };
 		CD66DDC1248E316500E08CA7 /* json.json in Resources */ = {isa = PBXBuildFile; fileRef = CD66DDC0248E316500E08CA7 /* json.json */; };
+		CD66DDC4248E93B100E08CA7 /* CellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66DDC3248E93B100E08CA7 /* CellHeaderView.swift */; };
 		CD76050E248E25E4005807D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76050D248E25E4005807D5 /* AppDelegate.swift */; };
 		CD760510248E25E4005807D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76050F248E25E4005807D5 /* SceneDelegate.swift */; };
 		CD760512248E25E4005807D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD760511248E25E4005807D5 /* ViewController.swift */; };
@@ -49,6 +50,14 @@
 		C0D8FB7101CB09A35F4C9977 /* Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD66DDBE248E315E00E08CA7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		CD66DDC0248E316500E08CA7 /* json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json.json; sourceTree = "<group>"; };
+		CD66DDC3248E93B100E08CA7 /* CellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeaderView.swift; sourceTree = "<group>"; };
+		CD66DDC7248E9C5500E08CA7 /* Proxima Nova Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Black.otf"; sourceTree = "<group>"; };
+		CD66DDC8248E9C5600E08CA7 /* Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold.otf"; sourceTree = "<group>"; };
+		CD66DDC9248E9C5600E08CA7 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
+		CD66DDCA248E9C5600E08CA7 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		CD66DDCB248E9C5600E08CA7 /* Proxima Nova Alt Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Thin.otf"; sourceTree = "<group>"; };
+		CD66DDCC248E9C5600E08CA7 /* Proxima Nova Alt Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Light.otf"; sourceTree = "<group>"; };
+		CD66DDCD248E9C5600E08CA7 /* Proxima Nova Alt Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Bold.otf"; sourceTree = "<group>"; };
 		CD76050A248E25E4005807D5 /* Anoda_Test_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anoda_Test_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD76050D248E25E4005807D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD76050F248E25E4005807D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,12 +125,35 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CD66DDC2248E938300E08CA7 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				CD66DDC3248E93B100E08CA7 /* CellHeaderView.swift */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		CD66DDC5248E9C2900E08CA7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CD66DDCD248E9C5600E08CA7 /* Proxima Nova Alt Bold.otf */,
+				CD66DDCC248E9C5600E08CA7 /* Proxima Nova Alt Light.otf */,
+				CD66DDCB248E9C5600E08CA7 /* Proxima Nova Alt Thin.otf */,
+				CD66DDC7248E9C5500E08CA7 /* Proxima Nova Black.otf */,
+				CD66DDC8248E9C5600E08CA7 /* Proxima Nova Bold.otf */,
+				CD66DDC9248E9C5600E08CA7 /* Proxima Nova Thin.otf */,
+				CD66DDCA248E9C5600E08CA7 /* ProximaNova-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		CD760501248E25E4005807D5 = {
 			isa = PBXGroup;
 			children = (
 				CD76050C248E25E4005807D5 /* Anoda_Test_Task */,
 				CD760523248E25E5005807D5 /* Anoda_Test_TaskTests */,
 				CD76052E248E25E5005807D5 /* Anoda_Test_TaskUITests */,
+				CD66DDC5248E9C2900E08CA7 /* Fonts */,
 				CD76050B248E25E4005807D5 /* Products */,
 				543590891EEE964CAA3872A4 /* Pods */,
 				08E0BF08A17292B5406219FA /* Frameworks */,
@@ -141,6 +173,7 @@
 		CD76050C248E25E4005807D5 /* Anoda_Test_Task */ = {
 			isa = PBXGroup;
 			children = (
+				CD66DDC2248E938300E08CA7 /* ImageCell */,
 				CD76050D248E25E4005807D5 /* AppDelegate.swift */,
 				CD76050F248E25E4005807D5 /* SceneDelegate.swift */,
 				CD760511248E25E4005807D5 /* ViewController.swift */,
@@ -411,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD760512248E25E4005807D5 /* ViewController.swift in Sources */,
+				CD66DDC4248E93B100E08CA7 /* CellHeaderView.swift in Sources */,
 				CD76050E248E25E4005807D5 /* AppDelegate.swift in Sources */,
 				CD760510248E25E4005807D5 /* SceneDelegate.swift in Sources */,
 				CD66DDBF248E315E00E08CA7 /* DataModel.swift in Sources */,
