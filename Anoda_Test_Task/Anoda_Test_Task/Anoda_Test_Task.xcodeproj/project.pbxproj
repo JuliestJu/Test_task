@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2EBF402D602F2B3AD415998E /* Pods_Anoda_Test_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB67E91909C3DA2853B4057 /* Pods_Anoda_Test_Task.framework */; };
 		304954FCCB005F5CDC8D4080 /* Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D8FB7101CB09A35F4C9977 /* Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework */; };
 		9E4A869CAF9B8E0ABA8A1564 /* Pods_Anoda_Test_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9E47383FEB307B34398B2E /* Pods_Anoda_Test_TaskTests.framework */; };
+		CD66DDBF248E315E00E08CA7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66DDBE248E315E00E08CA7 /* DataModel.swift */; };
+		CD66DDC1248E316500E08CA7 /* json.json in Resources */ = {isa = PBXBuildFile; fileRef = CD66DDC0248E316500E08CA7 /* json.json */; };
 		CD76050E248E25E4005807D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76050D248E25E4005807D5 /* AppDelegate.swift */; };
 		CD760510248E25E4005807D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76050F248E25E4005807D5 /* SceneDelegate.swift */; };
 		CD760512248E25E4005807D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD760511248E25E4005807D5 /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 		A9BD09706681A362CA1FE077 /* Pods-Anoda_Test_Task-Anoda_Test_TaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anoda_Test_Task-Anoda_Test_TaskUITests.release.xcconfig"; path = "Target Support Files/Pods-Anoda_Test_Task-Anoda_Test_TaskUITests/Pods-Anoda_Test_Task-Anoda_Test_TaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AE5A197686DC31478E8FB12F /* Pods-Anoda_Test_Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anoda_Test_Task.release.xcconfig"; path = "Target Support Files/Pods-Anoda_Test_Task/Pods-Anoda_Test_Task.release.xcconfig"; sourceTree = "<group>"; };
 		C0D8FB7101CB09A35F4C9977 /* Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD66DDBE248E315E00E08CA7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		CD66DDC0248E316500E08CA7 /* json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json.json; sourceTree = "<group>"; };
 		CD76050A248E25E4005807D5 /* Anoda_Test_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anoda_Test_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD76050D248E25E4005807D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD76050F248E25E4005807D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +113,6 @@
 				F008CA513FCA52F677814AA5 /* Pods-Anoda_Test_TaskTests.debug.xcconfig */,
 				499764EC9391E08337C89AF4 /* Pods-Anoda_Test_TaskTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -141,6 +144,8 @@
 				CD76050D248E25E4005807D5 /* AppDelegate.swift */,
 				CD76050F248E25E4005807D5 /* SceneDelegate.swift */,
 				CD760511248E25E4005807D5 /* ViewController.swift */,
+				CD66DDC0248E316500E08CA7 /* json.json */,
+				CD66DDBE248E315E00E08CA7 /* DataModel.swift */,
 				CD760516248E25E5005807D5 /* Assets.xcassets */,
 				CD760518248E25E5005807D5 /* LaunchScreen.storyboard */,
 				CD76051B248E25E5005807D5 /* Info.plist */,
@@ -275,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD66DDC1248E316500E08CA7 /* json.json in Resources */,
 				CD76051A248E25E5005807D5 /* LaunchScreen.storyboard in Resources */,
 				CD760517248E25E5005807D5 /* Assets.xcassets in Resources */,
 			);
@@ -407,6 +413,7 @@
 				CD760512248E25E4005807D5 /* ViewController.swift in Sources */,
 				CD76050E248E25E4005807D5 /* AppDelegate.swift in Sources */,
 				CD760510248E25E4005807D5 /* SceneDelegate.swift in Sources */,
+				CD66DDBF248E315E00E08CA7 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
