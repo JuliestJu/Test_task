@@ -1,0 +1,94 @@
+{
+    "data": [
+        {
+            "id": "12345",
+            "author": {
+                "id": "222",
+                "username": "Julia_Vorotchenko",
+                "profile_picture": "https://i.picsum.photos/id/953/200/200.jpg"
+            },
+            "location": "Kyiv, Ukraine",
+            "images": [
+                {
+                    "image_url": "https://i.picsum.photos/id/527/600/600.jpg"
+                },
+                {
+                    "image_url": "https://i.picsum.photos/id/529/600/600.jpg"
+                }
+            ],
+            "is_liked": false,
+            "is_saved": false,
+            "liked_by": [
+                {
+                    "id": "223",
+                    "username": "vita_korol",
+                    "profile_picture": "https://i.picsum.photos/id/579/200/200.jpg"
+                },
+                {
+                    "id": "224",
+                    "username": "kuzia_cat",
+                    "profile_picture": "https://i.picsum.photos/id/459/200/200.jpg"
+                },
+                {
+                    "id": "225",
+                    "username": "Vasya_Ivanov",
+                    "profile_picture": "https://i.picsum.photos/id/429/200/200.jpg"
+                }
+            ],
+            "description": {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at.",
+                "author": {
+                    "id": "222",
+                    "username": "Julia_Vorotchenko",
+                    "profile_picture": "https://i.picsum.photos/id/953/200/200.jpg"
+                }
+            },
+            "created_time": "1591469048"
+        },
+        {
+            "id": "12346",
+            "author": {
+                "id": "222",
+                "username": "Julia_Vorotchenko",
+                "profile_picture": "https://i.picsum.photos/id/953/200/200.jpg"
+            },
+            "location": "Kyiv, Ukraine",
+            "images": [
+                {
+                    "image_url": "https://i.picsum.photos/id/229/600/600.jpg"
+                },
+                {
+                    "image_url": "https://i.picsum.photos/id/129/600/600.jpg"
+                }
+            ],
+            "is_liked": false,
+            "is_saved": false,
+            "liked_by": [
+                {
+                    "id": "226",
+                    "username": "Liza_Vasilevskaya",
+                    "profile_picture": "https://i.picsum.photos/id/415/200/200.jpg"
+                },
+                {
+                    "id": "227",
+                    "username": "Kluchik",
+                    "profile_picture": "https://i.picsum.photos/id/15/200/200.jpg"
+                },
+                {
+                    "id": "228",
+                    "username": "Gadya_Petrovich",
+                    "profile_picture": "https://i.picsum.photos/id/111/200/200.jpg"
+                }
+            ],
+            "description": {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada.",
+                "author": {
+                    "id": "222",
+                    "username": "Julia_Vorotchenko",
+                    "profile_picture": "https://i.picsum.photos/id/953/200/200.jpg"
+                }
+            },
+            "created_time": "1591469371"
+        }
+    ]
+}
