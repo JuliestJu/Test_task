@@ -10,9 +10,9 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class CellHeaderView: UIView {
+final class CellHeaderView: UIView {
     
-    var primaryStackView: UIStackView = {
+    private var primaryStackView: UIStackView = {
         let primaryStackView = UIStackView()
         primaryStackView.translatesAutoresizingMaskIntoConstraints = false
         primaryStackView.axis = .horizontal
@@ -24,7 +24,7 @@ class CellHeaderView: UIView {
         return primaryStackView
     }()
     
-    var secondaryStackView: UIStackView = {
+    private var secondaryStackView: UIStackView = {
         let secondaryStackView = UIStackView()
         secondaryStackView.translatesAutoresizingMaskIntoConstraints = false
         secondaryStackView.axis = .vertical
@@ -33,7 +33,7 @@ class CellHeaderView: UIView {
         return secondaryStackView
     }()
     
-    var authorProfileImage: UIImageView = {
+    private var authorProfileImage: UIImageView = {
         let authorProfileImage = UIImageView()
         authorProfileImage.contentMode = .scaleToFill
         authorProfileImage.layer.borderColor = UIColor.lightGray.cgColor
@@ -41,7 +41,7 @@ class CellHeaderView: UIView {
         return authorProfileImage
     }()
     
-    var authorNameLabel: UILabel = {
+    private var authorNameLabel: UILabel = {
         let authorNameLabel = UILabel()
         authorNameLabel.translatesAutoresizingMaskIntoConstraints = false
         authorNameLabel.textAlignment = .left
@@ -52,7 +52,7 @@ class CellHeaderView: UIView {
         return authorNameLabel
     }()
     
-    var locationLabel: UILabel = {
+    private var locationLabel: UILabel = {
         let locationLabel = UILabel()
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         locationLabel.textAlignment = .left
@@ -65,22 +65,22 @@ class CellHeaderView: UIView {
     
     // MARK: - Buttons
     
-    var authorButton: UIButton = {
+    private var authorButton: UIButton = {
         let locationButton = UIButton()
         return locationButton
     }()
     
-    var locationButton: UIButton = {
+    private var locationButton: UIButton = {
         let locationButton = UIButton()
         return locationButton
     }()
     
-    var authorNameButton: UIButton = {
+    private var authorNameButton: UIButton = {
         let locationButton = UIButton()
         return locationButton
     }()
     
-    var actionButton: UIButton = {
+    private var actionButton: UIButton = {
         let actionButton = UIButton()
         actionButton.imageView?.contentMode = .center
         return actionButton
@@ -101,7 +101,7 @@ class CellHeaderView: UIView {
     
     // MARK: - UI Setup
     
-    func setupUI() {
+    private func setupUI() {
         
         self.addSubview(self.primaryStackView)
         self.primaryStackView.snp.makeConstraints {
@@ -151,15 +151,17 @@ class CellHeaderView: UIView {
         self.layoutIfNeeded()
     }
     
-    private func uiElementsConfig() {
+    private func UIElementsConfig() {
         self.authorProfileImage.layer.cornerRadius = self.authorProfileImage.frame.height / 2
         self.authorProfileImage.layer.masksToBounds = true
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.uiElementsConfig()
+        self.UIElementsConfig()
     }
+    
+    // MARK: - Public methods
     
     func fill(authorImageURL: String?, authorName: String, locaion: String) {
         guard let imageURL = authorImageURL else { return }
