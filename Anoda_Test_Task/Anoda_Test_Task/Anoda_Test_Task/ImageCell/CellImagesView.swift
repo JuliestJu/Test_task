@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CellImagesView: UIView {
     
@@ -16,6 +17,11 @@ final class CellImagesView: UIView {
         imageView.clipsToBounds = true
         imageView.isUserInteractionEnabled = true
         return imageView
+    }()
+    
+    private var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        return scrollView
     }()
     
     private var leftButtonsStackView: UIStackView = {
@@ -71,6 +77,13 @@ final class CellImagesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public methods
+    
+    func fill(imageURLstrings: [String]) {
+        self.arrangeScrollView(images: imageURLstrings, scrollView: self.scrollView)
+        self.pageControl.numberOfPages = imageURLstrings.count
+    }
+    
     // MARK: - UI Setup
     
     private func setupUI() {
@@ -113,17 +126,24 @@ final class CellImagesView: UIView {
         }
         self.saveButton.setImage(UIImage(named: "bookmark"), for: .normal)
         
+        self.imageView.addSubview(self.scrollView)
+        self.scrollView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        
         self.layoutIfNeeded()
     }
     
-    // MARK: - Public methods
-    
-    func fill(imagesQuantity: Int, showedImageIndex: Int = 0) {
-        self.pageControl.numberOfPages = imagesQuantity
+    private func arrangeScrollView(images: [String], scrollView: UIScrollView) {
+        let imagesURLs = images.map { URL(string: $0) }
+        imagesURLs.forEach {
+            let imageView = UIImageView()
+            imageView.kf.setImage(with: $0)
+            imageView.contentMode = .scaleToFill
+            scrollView.addSubview(imageView)
+        }
     }
-    
-    func updateCurrentPage(with index: Int) {
-        self.pageControl.currentPage = index
-    }
-
 }
