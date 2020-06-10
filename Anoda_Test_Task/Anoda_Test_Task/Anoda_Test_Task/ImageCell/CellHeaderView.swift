@@ -48,7 +48,7 @@ final class CellHeaderView: UIView {
         authorNameLabel.lineBreakMode = .byCharWrapping
         authorNameLabel.numberOfLines = 0
         authorNameLabel.textColor = .black
-        authorNameLabel.font = UIFont(name: "ProximaNova-Regular", size: 17)
+        authorNameLabel.font = UIFont(name: "ProximaNovaRegular", size: 17)
         return authorNameLabel
     }()
     
@@ -59,7 +59,7 @@ final class CellHeaderView: UIView {
         locationLabel.lineBreakMode = .byCharWrapping
         locationLabel.numberOfLines = 0
         locationLabel.textColor = .lightGray
-        locationLabel.font = UIFont(name: "ProximaNova-Regular", size: 15)
+        locationLabel.font = UIFont(name: "ProximaNovaRegular", size: 15)
         return locationLabel
     }()
     

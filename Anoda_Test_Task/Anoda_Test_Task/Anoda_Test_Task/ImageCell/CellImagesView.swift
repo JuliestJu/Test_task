@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CellImageView: UIView {
+final class CellImagesView: UIView {
     
     private var imageView: UIImageView = {
         let imageView = UIImageView()
