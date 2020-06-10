@@ -12,6 +12,8 @@
 		9E4A869CAF9B8E0ABA8A1564 /* Pods_Anoda_Test_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9E47383FEB307B34398B2E /* Pods_Anoda_Test_TaskTests.framework */; };
 		CD66DDBF248E315E00E08CA7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66DDBE248E315E00E08CA7 /* DataModel.swift */; };
 		CD66DDC1248E316500E08CA7 /* json.json in Resources */ = {isa = PBXBuildFile; fileRef = CD66DDC0248E316500E08CA7 /* json.json */; };
+		CD66DDC4248E93B100E08CA7 /* CellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66DDC3248E93B100E08CA7 /* CellHeaderView.swift */; };
+		CD66DDCF248EBE7100E08CA7 /* CellImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66DDCE248EBE7100E08CA7 /* CellImagesView.swift */; };
 		CD76050E248E25E4005807D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76050D248E25E4005807D5 /* AppDelegate.swift */; };
 		CD760510248E25E4005807D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76050F248E25E4005807D5 /* SceneDelegate.swift */; };
 		CD760512248E25E4005807D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD760511248E25E4005807D5 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 		CD76051A248E25E5005807D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD760518248E25E5005807D5 /* LaunchScreen.storyboard */; };
 		CD760525248E25E5005807D5 /* Anoda_Test_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD760524248E25E5005807D5 /* Anoda_Test_TaskTests.swift */; };
 		CD760530248E25E5005807D5 /* Anoda_Test_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76052F248E25E5005807D5 /* Anoda_Test_TaskUITests.swift */; };
+		CDDFBBFE2490166C009B4383 /* CellDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBBFD2490166C009B4383 /* CellDescriptionView.swift */; };
+		CDDFBC0024912179009B4383 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBBFF24912179009B4383 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,15 @@
 		C0D8FB7101CB09A35F4C9977 /* Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD66DDBE248E315E00E08CA7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		CD66DDC0248E316500E08CA7 /* json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json.json; sourceTree = "<group>"; };
+		CD66DDC3248E93B100E08CA7 /* CellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeaderView.swift; sourceTree = "<group>"; };
+		CD66DDC7248E9C5500E08CA7 /* ProximaNovaBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaBlack.otf; sourceTree = "<group>"; };
+		CD66DDC8248E9C5600E08CA7 /* ProximaNovaBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaBold.otf; sourceTree = "<group>"; };
+		CD66DDC9248E9C5600E08CA7 /* ProximaNovaThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaThin.otf; sourceTree = "<group>"; };
+		CD66DDCA248E9C5600E08CA7 /* ProximaNovaRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaRegular.otf; sourceTree = "<group>"; };
+		CD66DDCB248E9C5600E08CA7 /* ProximaNovaAltThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaAltThin.otf; sourceTree = "<group>"; };
+		CD66DDCC248E9C5600E08CA7 /* ProximaNovaAltLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaAltLight.otf; sourceTree = "<group>"; };
+		CD66DDCD248E9C5600E08CA7 /* ProximaNovaAltBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaAltBold.otf; sourceTree = "<group>"; };
+		CD66DDCE248EBE7100E08CA7 /* CellImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellImagesView.swift; sourceTree = "<group>"; };
 		CD76050A248E25E4005807D5 /* Anoda_Test_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anoda_Test_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD76050D248E25E4005807D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD76050F248E25E4005807D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +75,8 @@
 		CD76052B248E25E5005807D5 /* Anoda_Test_TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Anoda_Test_TaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD76052F248E25E5005807D5 /* Anoda_Test_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anoda_Test_TaskUITests.swift; sourceTree = "<group>"; };
 		CD760531248E25E5005807D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDDFBBFD2490166C009B4383 /* CellDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDescriptionView.swift; sourceTree = "<group>"; };
+		CDDFBBFF24912179009B4383 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F008CA513FCA52F677814AA5 /* Pods-Anoda_Test_TaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anoda_Test_TaskTests.debug.xcconfig"; path = "Target Support Files/Pods-Anoda_Test_TaskTests/Pods-Anoda_Test_TaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,12 +131,37 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CD66DDC2248E938300E08CA7 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				CD66DDC3248E93B100E08CA7 /* CellHeaderView.swift */,
+				CD66DDCE248EBE7100E08CA7 /* CellImagesView.swift */,
+				CDDFBBFD2490166C009B4383 /* CellDescriptionView.swift */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		CD66DDC5248E9C2900E08CA7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CD66DDCD248E9C5600E08CA7 /* ProximaNovaAltBold.otf */,
+				CD66DDCC248E9C5600E08CA7 /* ProximaNovaAltLight.otf */,
+				CD66DDCB248E9C5600E08CA7 /* ProximaNovaAltThin.otf */,
+				CD66DDC7248E9C5500E08CA7 /* ProximaNovaBlack.otf */,
+				CD66DDC8248E9C5600E08CA7 /* ProximaNovaBold.otf */,
+				CD66DDC9248E9C5600E08CA7 /* ProximaNovaThin.otf */,
+				CD66DDCA248E9C5600E08CA7 /* ProximaNovaRegular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		CD760501248E25E4005807D5 = {
 			isa = PBXGroup;
 			children = (
 				CD76050C248E25E4005807D5 /* Anoda_Test_Task */,
 				CD760523248E25E5005807D5 /* Anoda_Test_TaskTests */,
 				CD76052E248E25E5005807D5 /* Anoda_Test_TaskUITests */,
+				CD66DDC5248E9C2900E08CA7 /* Fonts */,
 				CD76050B248E25E4005807D5 /* Products */,
 				543590891EEE964CAA3872A4 /* Pods */,
 				08E0BF08A17292B5406219FA /* Frameworks */,
@@ -141,6 +181,7 @@
 		CD76050C248E25E4005807D5 /* Anoda_Test_Task */ = {
 			isa = PBXGroup;
 			children = (
+				CD66DDC2248E938300E08CA7 /* ImageCell */,
 				CD76050D248E25E4005807D5 /* AppDelegate.swift */,
 				CD76050F248E25E4005807D5 /* SceneDelegate.swift */,
 				CD760511248E25E4005807D5 /* ViewController.swift */,
@@ -149,6 +190,7 @@
 				CD760516248E25E5005807D5 /* Assets.xcassets */,
 				CD760518248E25E5005807D5 /* LaunchScreen.storyboard */,
 				CD76051B248E25E5005807D5 /* Info.plist */,
+				CDDFBBFF24912179009B4383 /* String+Extension.swift */,
 			);
 			path = Anoda_Test_Task;
 			sourceTree = "<group>";
@@ -410,7 +452,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDDFBC0024912179009B4383 /* String+Extension.swift in Sources */,
+				CDDFBBFE2490166C009B4383 /* CellDescriptionView.swift in Sources */,
+				CD66DDCF248EBE7100E08CA7 /* CellImagesView.swift in Sources */,
 				CD760512248E25E4005807D5 /* ViewController.swift in Sources */,
+				CD66DDC4248E93B100E08CA7 /* CellHeaderView.swift in Sources */,
 				CD76050E248E25E4005807D5 /* AppDelegate.swift in Sources */,
 				CD760510248E25E4005807D5 /* SceneDelegate.swift in Sources */,
 				CD66DDBF248E315E00E08CA7 /* DataModel.swift in Sources */,
