@@ -10,6 +10,7 @@ import UIKit
 
 class PostCollecttionViewCell: UICollectionViewCell {
     
+    static let identifier = "PostCollecttionViewCell"
     let headerView = CellHeaderView()
     let cellImagesView = CellImagesView()
     let cellDescriptionView = CellDescriptionView()
@@ -49,10 +50,7 @@ class PostCollecttionViewCell: UICollectionViewCell {
     func setupUI() {
         self.addSubview(self.stackView)
         self.stackView.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.top.equalToSuperview()
-            $0.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         
         self.stackView.addArrangedSubview(self.headerView)
@@ -67,5 +65,6 @@ class PostCollecttionViewCell: UICollectionViewCell {
         
         self.stackView.addArrangedSubview(self.cellDescriptionView)
         
+        self.layoutIfNeeded()
     }
 }

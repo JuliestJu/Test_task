@@ -76,6 +76,8 @@ final class CellDescriptionView: UIView {
             $0.trailing.equalToSuperview().offset(15)
             $0.bottom.equalToSuperview().inset(4)
         }
+        
+        self.layoutIfNeeded()
     }
     
     private func createLikedByString(usersWhoLiked: [String]) -> String {

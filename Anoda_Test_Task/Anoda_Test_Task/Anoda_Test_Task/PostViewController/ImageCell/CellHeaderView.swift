@@ -108,6 +108,7 @@ final class CellHeaderView: UIView {
             $0.leading.equalToSuperview()
             $0.top.equalToSuperview()
             $0.bottom.equalToSuperview()
+            $0.height.equalTo(60)
         }
         
         self.primaryStackView.addArrangedSubview(self.authorProfileImage)
@@ -118,34 +119,32 @@ final class CellHeaderView: UIView {
         
         self.authorProfileImage.addSubview(self.authorButton)
         self.authorButton.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         
         self.primaryStackView.addArrangedSubview(self.secondaryStackView)
+        self.secondaryStackView.snp.makeConstraints {
+            $0.leading.equalTo(self.authorProfileImage.snp.trailing).offset(8)
+            $0.centerY.equalToSuperview()
+        }
+        
         self.primaryStackView.addArrangedSubview(self.actionButton)
         self.actionButton.snp.makeConstraints {
             $0.width.equalTo(30)
             $0.height.equalTo(30)
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview()
         }
         
         self.secondaryStackView.addArrangedSubview(self.authorNameLabel)
         self.secondaryStackView.addArrangedSubview(self.locationLabel)
         self.authorNameLabel.addSubview(self.authorNameButton)
         self.authorNameButton.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         self.locationLabel.addSubview(self.locationButton)
         self.locationButton.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         
         self.layoutIfNeeded()
