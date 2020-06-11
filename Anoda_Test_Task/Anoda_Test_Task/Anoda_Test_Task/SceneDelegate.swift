@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
        self.window = UIWindow(windowScene: UIWindowScene(session: session, connectionOptions: connectionOptions))
-        self.window?.rootViewController = ViewController()
+        self.window?.rootViewController = PostViewController()
         self.window?.makeKeyAndVisible()
     }
 

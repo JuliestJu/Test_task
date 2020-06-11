@@ -83,10 +83,14 @@ final class CellDescriptionView: UIView {
         let boldAttributes = [NSAttributedString.Key.font: UIFont(name: "ProximaNovaAltBold", size: 13)]
         let likesCalculated = self.calculateLikes(from: usersWhoLiked)
         
-        let likedByString = NSAttributedString(string: "Liked By ", attributes: regularAttributes as [NSAttributedString.Key : Any])
-        let firstThreeLikers = NSAttributedString(string: likesCalculated.0.joined(separator: ", "), attributes: boldAttributes as [NSAttributedString.Key : Any])
-        let andString = NSAttributedString(string: " and", attributes: regularAttributes as [NSAttributedString.Key : Any])
-        let othersString = NSAttributedString(string: likesCalculated.1 + " others", attributes: boldAttributes as [NSAttributedString.Key : Any])
+        let likedByString = NSAttributedString(string: "Liked By ",
+                                               attributes: regularAttributes as [NSAttributedString.Key : Any])
+        let firstThreeLikers = NSAttributedString(string: likesCalculated.0.joined(separator: ", "),
+                                                  attributes: boldAttributes as [NSAttributedString.Key : Any])
+        let andString = NSAttributedString(string: " and",
+                                           attributes: regularAttributes as [NSAttributedString.Key : Any])
+        let othersString = NSAttributedString(string: likesCalculated.1 + " others",
+                                              attributes: boldAttributes as [NSAttributedString.Key : Any])
         
         if usersWhoLiked.count > 3 {
             return "\(likedByString) + \(firstThreeLikers) + \(andString) + \(othersString)"
@@ -108,7 +112,7 @@ final class CellDescriptionView: UIView {
                 descrString.append($0)
             }
         }
-        return descrString.joined(separator: "")
+        return descrString.joined(separator: " ")
     }
     
     private func calculateLikes(from users: [String]) -> ([String], String) {

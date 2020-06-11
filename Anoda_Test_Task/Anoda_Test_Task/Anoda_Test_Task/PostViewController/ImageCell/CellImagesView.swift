@@ -92,12 +92,12 @@ final class CellImagesView: UIView {
             $0.top.equalToSuperview()
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
-            $0.height.equalTo(self.imageView.snp.height)
+            $0.height.equalTo(self.imageView.snp.width)
         }
         
         self.addSubview(self.leftButtonsStackView)
         self.leftButtonsStackView.snp.makeConstraints {
-            $0.top.equalTo(self.imageView)
+            $0.top.equalTo(self.imageView.snp.bottom)
             $0.leading.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.width.equalTo(120)
@@ -115,7 +115,7 @@ final class CellImagesView: UIView {
         self.addSubview(self.pageControl)
         self.pageControl.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(self.imageView).offset(5)
+            $0.top.equalTo(self.imageView.snp.bottom).offset(5)
         }
         
         self.addSubview(self.saveButton)

@@ -13,7 +13,7 @@ struct DataModel: Decodable {
     let id: String
     let author: Author
     let location: String
-    let images: [ImageURL]
+    let images: [String]
     let isLiked: Bool
     let isSaved: Bool
     let likedBy: [Author]
@@ -42,14 +42,6 @@ struct Author: Decodable {
         case id = "id"
         case username = "username"
         case profileImage = "profile_picture"
-    }
-}
-
-struct ImageURL: Decodable {
-    let imageURL: String
-    
-    enum CodingKeys: String, CodingKey {
-        case imageURL = "image_url"
     }
 }
 
