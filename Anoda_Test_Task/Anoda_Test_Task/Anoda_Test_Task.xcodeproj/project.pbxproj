@@ -133,6 +133,35 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CD4BA44924923061005E4E9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD66DDBE248E315E00E08CA7 /* DataModel.swift */,
+				CD66DDC0248E316500E08CA7 /* json.json */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD4BA44A2492307C005E4E9D /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				CDDFBBFF24912179009B4383 /* String+Extension.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		CD4BA44B249230A0005E4E9D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CD76050D248E25E4005807D5 /* AppDelegate.swift */,
+				CD76050F248E25E4005807D5 /* SceneDelegate.swift */,
+				CD760516248E25E5005807D5 /* Assets.xcassets */,
+				CD760518248E25E5005807D5 /* LaunchScreen.storyboard */,
+				CD76051B248E25E5005807D5 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		CD66DDC2248E938300E08CA7 /* ImageCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,15 +212,10 @@
 		CD76050C248E25E4005807D5 /* Anoda_Test_Task */ = {
 			isa = PBXGroup;
 			children = (
+				CD4BA44924923061005E4E9D /* Models */,
 				CDDFBC0124916249009B4383 /* PostViewController */,
-				CD76050D248E25E4005807D5 /* AppDelegate.swift */,
-				CD76050F248E25E4005807D5 /* SceneDelegate.swift */,
-				CD66DDC0248E316500E08CA7 /* json.json */,
-				CD66DDBE248E315E00E08CA7 /* DataModel.swift */,
-				CD760516248E25E5005807D5 /* Assets.xcassets */,
-				CD760518248E25E5005807D5 /* LaunchScreen.storyboard */,
-				CD76051B248E25E5005807D5 /* Info.plist */,
-				CDDFBBFF24912179009B4383 /* String+Extension.swift */,
+				CD4BA44B249230A0005E4E9D /* App */,
+				CD4BA44A2492307C005E4E9D /* Lib */,
 			);
 			path = Anoda_Test_Task;
 			sourceTree = "<group>";
