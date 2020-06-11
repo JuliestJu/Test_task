@@ -13,6 +13,7 @@ final class CellImagesView: UIView {
     
     private var imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = .lightGray
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.isUserInteractionEnabled = true
@@ -87,6 +88,7 @@ final class CellImagesView: UIView {
     // MARK: - UI Setup
     
     private func setupUI() {
+       
         self.addSubview(imageView)
         self.imageView.snp.makeConstraints {
             $0.top.equalToSuperview()

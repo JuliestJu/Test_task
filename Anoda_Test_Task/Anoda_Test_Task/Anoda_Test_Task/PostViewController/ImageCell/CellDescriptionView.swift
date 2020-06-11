@@ -55,7 +55,7 @@ final class CellDescriptionView: UIView {
     // MARK: - Private Methods
     
     private func setupUI() {
-        
+        self.backgroundColor = .green
         self.addSubview(self.likedByLabel)
         self.likedByLabel.snp.makeConstraints {
             $0.top.equalToSuperview()

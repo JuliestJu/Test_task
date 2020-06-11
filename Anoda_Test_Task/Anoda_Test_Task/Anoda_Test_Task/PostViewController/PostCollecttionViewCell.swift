@@ -29,6 +29,7 @@ class PostCollecttionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -55,7 +56,7 @@ class PostCollecttionViewCell: UICollectionViewCell {
         
         self.stackView.addArrangedSubview(self.headerView)
         self.headerView.snp.makeConstraints  {
-            $0.height.equalTo(60).constraint.activate()
+            $0.left.right.equalToSuperview()
         }
         
         self.stackView.addArrangedSubview(self.cellImagesView)
@@ -64,6 +65,11 @@ class PostCollecttionViewCell: UICollectionViewCell {
         }
         
         self.stackView.addArrangedSubview(self.cellDescriptionView)
+        self.cellDescriptionView.snp.makeConstraints {
+            $0.leading.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.trailing.equalToSuperview()
+        }
         
         self.layoutIfNeeded()
     }
