@@ -12,25 +12,12 @@ import Kingfisher
 
 final class CellHeaderView: UIView {
     
-    private var primaryStackView: UIStackView = {
-        let primaryStackView = UIStackView()
-        primaryStackView.translatesAutoresizingMaskIntoConstraints = false
-        primaryStackView.axis = .horizontal
-        primaryStackView.layoutMargins.left = 5
-        primaryStackView.isLayoutMarginsRelativeArrangement = true
-        primaryStackView.spacing = 5
-        primaryStackView.alignment = .center
-        primaryStackView.distribution = .fill
-        return primaryStackView
-    }()
-    
-    private var secondaryStackView: UIStackView = {
-        let secondaryStackView = UIStackView()
-        secondaryStackView.translatesAutoresizingMaskIntoConstraints = false
-        secondaryStackView.axis = .vertical
-        secondaryStackView.spacing = 5 //kkk
-        secondaryStackView.alignment = .leading
-        return secondaryStackView
+    private var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        return stackView
     }()
     
     private var authorProfileImage: UIImageView = {
@@ -48,7 +35,9 @@ final class CellHeaderView: UIView {
         authorNameLabel.lineBreakMode = .byCharWrapping
         authorNameLabel.numberOfLines = 0
         authorNameLabel.textColor = .black
-        authorNameLabel.font = UIFont(name: "ProximaNovaRegular", size: 17)
+        authorNameLabel.font = UIFont(name: "ProximaNovaRegular", size: 16)
+        authorNameLabel.isUserInteractionEnabled = true
+        authorNameLabel.text = "ajsjdkfkkfk xkckmcmv"
         return authorNameLabel
     }()
     
@@ -58,31 +47,24 @@ final class CellHeaderView: UIView {
         locationLabel.textAlignment = .left
         locationLabel.lineBreakMode = .byCharWrapping
         locationLabel.numberOfLines = 0
-        locationLabel.textColor = .lightGray
-        locationLabel.font = UIFont(name: "ProximaNovaRegular", size: 15)
+        locationLabel.textColor = .darkGray
+        locationLabel.font = UIFont(name: "ProximaNovaRegular", size: 12)
+        locationLabel.isUserInteractionEnabled = true
+        locationLabel.text = "dmmdmcmcmcm"
         return locationLabel
     }()
     
     // MARK: - Buttons
     
     private var authorButton: UIButton = {
-        let locationButton = UIButton()
-        return locationButton
-    }()
-    
-    private var locationButton: UIButton = {
-        let locationButton = UIButton()
-        return locationButton
-    }()
-    
-    private var authorNameButton: UIButton = {
-        let locationButton = UIButton()
-        return locationButton
+        let authorButton = UIButton()
+        return authorButton
     }()
     
     private var actionButton: UIButton = {
         let actionButton = UIButton()
         actionButton.imageView?.contentMode = .center
+        actionButton.setImage(UIImage(named: "more"), for: .normal)
         return actionButton
     }()
     
@@ -102,50 +84,39 @@ final class CellHeaderView: UIView {
     // MARK: - UI Setup
     
     private func setupUI() {
-        
-        self.addSubview(self.primaryStackView)
-        self.primaryStackView.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.top.equalToSuperview()
-            $0.bottom.equalToSuperview()
+        self.backgroundColor = .systemTeal
+        self.snp.makeConstraints {
+            $0.height.equalTo(55)
+        }
+    
+        self.addSubview(self.authorProfileImage)
+        self.authorProfileImage.snp.makeConstraints {
+            $0.left.equalTo(self.snp.left).inset(12.0)
+            $0.centerY.equalTo(self.snp.centerY)
+            $0.height.width.equalTo(42.0)
         }
         
-        self.primaryStackView.addArrangedSubview(self.authorProfileImage)
-        self.authorProfileImage.snp.makeConstraints {
-            $0.width.equalTo(30)
-            $0.height.equalTo(30)
+        self.addSubview(self.stackView)
+        self.stackView.addArrangedSubview(self.authorNameLabel)
+        self.stackView.addArrangedSubview(self.locationLabel)
+        
+        self.stackView.snp.makeConstraints {
+            $0.left.equalTo(authorProfileImage.snp.right).offset(15.0)
+            $0.right.equalToSuperview().inset(20.0)
+            $0.top.equalToSuperview().inset(8.0)
+            $0.bottom.equalTo(self.snp.bottom).inset(8.0)
+        }
+        
+        self.addSubview(self.actionButton)
+        self.actionButton.snp.makeConstraints {
+            $0.right.equalToSuperview().inset(15)
+            $0.centerY.equalTo(self.snp.centerY)
+            $0.height.equalTo(self.snp.height)
         }
         
         self.authorProfileImage.addSubview(self.authorButton)
         self.authorButton.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview()
-        }
-        
-        self.primaryStackView.addArrangedSubview(self.secondaryStackView)
-        self.primaryStackView.addArrangedSubview(self.actionButton)
-        self.actionButton.snp.makeConstraints {
-            $0.width.equalTo(30)
-            $0.height.equalTo(30)
-        }
-        
-        self.secondaryStackView.addArrangedSubview(self.authorNameLabel)
-        self.secondaryStackView.addArrangedSubview(self.locationLabel)
-        self.authorNameLabel.addSubview(self.authorNameButton)
-        self.authorNameButton.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview()
-        }
-        self.locationLabel.addSubview(self.locationButton)
-        self.locationButton.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         
         self.layoutIfNeeded()

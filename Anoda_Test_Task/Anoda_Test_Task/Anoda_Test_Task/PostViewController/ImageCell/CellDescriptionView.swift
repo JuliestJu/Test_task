@@ -10,8 +10,17 @@ import UIKit
 
 final class CellDescriptionView: UIView {
     
+    var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        return stackView
+    }()
+    
     var likedByLabel: UILabel = {
         let likedByLabel = UILabel()
+        likedByLabel.text = "I love Medium's membership — it gives me access to the stories I love by the"
         likedByLabel.translatesAutoresizingMaskIntoConstraints = false
         likedByLabel.numberOfLines = 0
         return likedByLabel
@@ -19,6 +28,7 @@ final class CellDescriptionView: UIView {
     
     var postDescriptionLabel: UILabel = {
         let postDescriptionLabel = UILabel()
+        postDescriptionLabel.text = "When adding an image the title is pushed to the right with the amount of the image width."
         postDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         postDescriptionLabel.numberOfLines = 0
         return postDescriptionLabel
@@ -26,6 +36,7 @@ final class CellDescriptionView: UIView {
     
     var createdTimeLabel: UILabel = {
         let createdTimeLabel = UILabel()
+        createdTimeLabel.text = "3 hours ago"
         createdTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         createdTimeLabel.numberOfLines = 1
         createdTimeLabel.font = UIFont(name: "ProximaNovaThin", size: 13)
@@ -55,27 +66,19 @@ final class CellDescriptionView: UIView {
     // MARK: - Private Methods
     
     private func setupUI() {
-        
-        self.addSubview(self.likedByLabel)
-        self.likedByLabel.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().offset(10)
-            $0.trailing.equalToSuperview().offset(15)
+        self.backgroundColor = .systemTeal
+        self.addSubview(self.stackView)
+        self.stackView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         
-        self.addSubview(self.postDescriptionLabel)
-        self.postDescriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(self.likedByLabel).offset(10)
-            $0.leading.equalToSuperview().offset(10)
-            $0.trailing.equalToSuperview().offset(15)
-        }
+        self.stackView.addArrangedSubview(self.likedByLabel)
+        self.stackView.addArrangedSubview(self.postDescriptionLabel)
+        self.stackView.addArrangedSubview(self.createdTimeLabel)
         
-        self.addSubview(self.createdTimeLabel)
-        self.createdTimeLabel.snp.makeConstraints {
-            $0.top.equalTo(self.postDescriptionLabel).offset(7)
-            $0.trailing.equalToSuperview().offset(15)
-            $0.bottom.equalToSuperview().inset(4)
-        }
+        
+        
+        self.layoutIfNeeded()
     }
     
     private func createLikedByString(usersWhoLiked: [String]) -> String {
@@ -104,7 +107,7 @@ final class CellDescriptionView: UIView {
         let wordsArray = description.components(separatedBy: .whitespaces)
         let blueRegularAtributes = [NSAttributedString.Key.font: UIFont(name: "ProximaNovaRegular", size: 13),
                                     NSAttributedString.Key.foregroundColor: UIColor.systemBlue]
-    
+        
         wordsArray.forEach {
             if $0.contains("#") || $0.contains("@") {
                 descrString.append("\(NSAttributedString(string: $0, attributes: blueRegularAtributes as [NSAttributedString.Key : Any]))")

@@ -10,6 +10,7 @@ import UIKit
 
 class PostCollecttionViewCell: UICollectionViewCell {
     
+    static let identifier = "PostCollecttionViewCell"
     let headerView = CellHeaderView()
     let cellImagesView = CellImagesView()
     let cellDescriptionView = CellDescriptionView()
@@ -19,7 +20,7 @@ class PostCollecttionViewCell: UICollectionViewCell {
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 0
-        stackView.alignment = .center
+        stackView.alignment = .fill
         stackView.distribution = .fill
         return stackView
     }()
@@ -28,6 +29,7 @@ class PostCollecttionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -49,23 +51,24 @@ class PostCollecttionViewCell: UICollectionViewCell {
     func setupUI() {
         self.addSubview(self.stackView)
         self.stackView.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.top.equalToSuperview()
-            $0.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         
         self.stackView.addArrangedSubview(self.headerView)
         self.headerView.snp.makeConstraints  {
-            $0.height.equalTo(60).constraint.activate()
+            $0.left.right.equalToSuperview()
         }
         
         self.stackView.addArrangedSubview(self.cellImagesView)
         self.cellImagesView.snp.makeConstraints {
-            $0.height.equalTo(self.cellImagesView.snp.width).offset(60)
+            $0.left.right.equalToSuperview()
         }
         
         self.stackView.addArrangedSubview(self.cellDescriptionView)
+        self.cellDescriptionView.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
+        }
         
+        self.layoutIfNeeded()
     }
 }
