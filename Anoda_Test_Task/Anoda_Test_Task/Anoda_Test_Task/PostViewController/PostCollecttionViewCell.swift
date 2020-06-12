@@ -20,7 +20,7 @@ class PostCollecttionViewCell: UICollectionViewCell {
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 0
-        stackView.alignment = .center
+        stackView.alignment = .fill
         stackView.distribution = .fill
         return stackView
     }()
@@ -61,14 +61,12 @@ class PostCollecttionViewCell: UICollectionViewCell {
         
         self.stackView.addArrangedSubview(self.cellImagesView)
         self.cellImagesView.snp.makeConstraints {
-            $0.height.equalTo(self.cellImagesView.snp.width).offset(60)
+            $0.left.right.equalToSuperview()
         }
         
         self.stackView.addArrangedSubview(self.cellDescriptionView)
         self.cellDescriptionView.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.bottom.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.left.right.equalToSuperview()
         }
         
         self.layoutIfNeeded()

@@ -44,6 +44,7 @@ final class CellImagesView: UIView {
         let likeButton = UIButton()
         likeButton.contentMode = .scaleToFill
         likeButton.translatesAutoresizingMaskIntoConstraints = false
+        likeButton.backgroundColor = .blue
         return likeButton
     }()
     
@@ -69,6 +70,7 @@ final class CellImagesView: UIView {
     
     private var saveButton: UIButton = {
         let saveButton = UIButton()
+        saveButton.backgroundColor = .blue
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         return saveButton
     }()
@@ -94,8 +96,9 @@ final class CellImagesView: UIView {
     // MARK: - UI Setup
     
     private func setupUI() {
-      
-        self.addSubview(imageView)
+        
+        self.backgroundColor = .systemIndigo
+        self.addSubview(self.imageView)
         self.imageView.snp.makeConstraints {
             $0.left.top.right.equalToSuperview()
             $0.height.equalTo(self.imageView.snp.width)
@@ -104,7 +107,7 @@ final class CellImagesView: UIView {
         self.addSubview(self.actionsContainer)
         self.actionsContainer.snp.makeConstraints {
             $0.left.right.bottom.equalToSuperview()
-            $0.height.equalTo(55)
+            $0.height.equalTo(60)
         }
         
         self.actionsContainer.addSubview(self.leftButtonsStackView)
@@ -113,7 +116,6 @@ final class CellImagesView: UIView {
         
         self.leftButtonsStackView.snp.makeConstraints {
             $0.left.equalToSuperview()
-            $0.width.equalTo(120)
             $0.centerY.equalToSuperview()
         }
         
@@ -122,10 +124,11 @@ final class CellImagesView: UIView {
         self.likeButton.snp.makeConstraints {
             $0.width.height.equalTo(40)
         }
-    
+        
         self.leftButtonsStackView.addArrangedSubview(self.commentButton)
         self.commentButton.setImage(UIImage(named: "comment"), for: .normal)
         self.commentButton.snp.makeConstraints {
+            $0.bottom.equalToSuperview()
             $0.width.height.equalTo(40)
         }
         
@@ -134,8 +137,8 @@ final class CellImagesView: UIView {
         self.shareButton.snp.makeConstraints {
             $0.width.height.equalTo(40)
         }
-      
-       
+        
+        
         self.pageControl.snp.makeConstraints {
             $0.height.equalToSuperview()
             $0.centerX.centerY.equalToSuperview()
