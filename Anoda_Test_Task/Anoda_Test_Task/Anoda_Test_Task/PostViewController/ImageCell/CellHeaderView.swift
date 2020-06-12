@@ -90,7 +90,7 @@ final class CellHeaderView: UIView {
         }
     
         self.addSubview(self.authorProfileImage)
-        authorProfileImage.snp.makeConstraints {
+        self.authorProfileImage.snp.makeConstraints {
             $0.left.equalTo(self.snp.left).inset(12.0)
             $0.centerY.equalTo(self.snp.centerY)
             $0.height.width.equalTo(42.0)
@@ -100,7 +100,7 @@ final class CellHeaderView: UIView {
         self.stackView.addArrangedSubview(self.authorNameLabel)
         self.stackView.addArrangedSubview(self.locationLabel)
         
-        stackView.snp.makeConstraints {
+        self.stackView.snp.makeConstraints {
             $0.left.equalTo(authorProfileImage.snp.right).offset(15.0)
             $0.right.equalToSuperview().inset(20.0)
             $0.top.equalToSuperview().inset(8.0)

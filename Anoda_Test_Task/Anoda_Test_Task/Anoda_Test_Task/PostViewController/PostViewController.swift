@@ -17,7 +17,7 @@ class PostViewController: UIViewController, UICollectionViewDelegate, UICollecti
         layout.itemSize = .init(width: 400, height: 600)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .cyan
+        collectionView.backgroundColor = .white
         return collectionView
     }()
     

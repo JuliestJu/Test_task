@@ -25,18 +25,24 @@ final class CellImagesView: UIView {
         return scrollView
     }()
     
+    private var actionsContainer: UIView = {
+        let actionsContainer = UIView()
+        return actionsContainer
+    }()
+    
     private var leftButtonsStackView: UIStackView = {
         let leftButtonsStackView = UIStackView()
         leftButtonsStackView.translatesAutoresizingMaskIntoConstraints = false
         leftButtonsStackView.axis = .horizontal
         leftButtonsStackView.spacing = 1
-        leftButtonsStackView.distribution = .fillProportionally
+        leftButtonsStackView.distribution = .fillEqually
         leftButtonsStackView.contentMode = .scaleAspectFill
         return leftButtonsStackView
     }()
     
     private var likeButton: UIButton = {
         let likeButton = UIButton()
+        likeButton.contentMode = .scaleToFill
         likeButton.translatesAutoresizingMaskIntoConstraints = false
         return likeButton
     }()
@@ -88,45 +94,60 @@ final class CellImagesView: UIView {
     // MARK: - UI Setup
     
     private func setupUI() {
-       
+      
         self.addSubview(imageView)
         self.imageView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.left.top.right.equalToSuperview()
             $0.height.equalTo(self.imageView.snp.width)
         }
         
-        self.addSubview(self.leftButtonsStackView)
+        self.addSubview(self.actionsContainer)
+        self.actionsContainer.snp.makeConstraints {
+            $0.left.right.bottom.equalToSuperview()
+            $0.height.equalTo(55)
+        }
+        
+        self.actionsContainer.addSubview(self.leftButtonsStackView)
+        self.actionsContainer.addSubview(self.pageControl)
+        self.actionsContainer.addSubview(self.saveButton)
+        
         self.leftButtonsStackView.snp.makeConstraints {
-            $0.top.equalTo(self.imageView.snp.bottom)
-            $0.leading.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.left.equalToSuperview()
             $0.width.equalTo(120)
+            $0.centerY.equalToSuperview()
         }
         
         self.leftButtonsStackView.addArrangedSubview(self.likeButton)
         self.likeButton.setImage(UIImage(named: "heart"), for: .normal)
+        self.likeButton.snp.makeConstraints {
+            $0.width.height.equalTo(40)
+        }
     
         self.leftButtonsStackView.addArrangedSubview(self.commentButton)
         self.commentButton.setImage(UIImage(named: "comment"), for: .normal)
+        self.commentButton.snp.makeConstraints {
+            $0.width.height.equalTo(40)
+        }
         
         self.leftButtonsStackView.addArrangedSubview(self.shareButton)
         self.shareButton.setImage(UIImage(named: "send"), for: .normal)
-        
-        self.addSubview(self.pageControl)
+        self.shareButton.snp.makeConstraints {
+            $0.width.height.equalTo(40)
+        }
+      
+       
         self.pageControl.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(self.imageView.snp.bottom).offset(5)
+            $0.height.equalToSuperview()
+            $0.centerX.centerY.equalToSuperview()
         }
         
-        self.addSubview(self.saveButton)
-        self.saveButton.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(5)
-            $0.top.equalToSuperview().inset(2)
-            $0.bottom.equalToSuperview().inset(2)
-        }
         self.saveButton.setImage(UIImage(named: "bookmark"), for: .normal)
+        self.saveButton.snp.makeConstraints {
+            $0.right.equalToSuperview()
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(40)
+        }
+        
         
         self.imageView.addSubview(self.scrollView)
         self.scrollView.snp.makeConstraints {
