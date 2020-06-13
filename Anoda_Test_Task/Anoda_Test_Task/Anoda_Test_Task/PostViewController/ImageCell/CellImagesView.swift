@@ -9,19 +9,12 @@
 import UIKit
 import Kingfisher
 
-final class CellImagesView: UIView {
-    
-    private var imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .lightGray
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.isUserInteractionEnabled = true
-        return imageView
-    }()
-    
+final class CellImagesView: UIView, UIScrollViewDelegate {
+   
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.isPagingEnabled = true
+        scrollView.indicatorStyle = .white
         return scrollView
     }()
     
@@ -97,11 +90,11 @@ final class CellImagesView: UIView {
         self.snp.makeConstraints {
             $0.height.equalTo(self.snp.width).offset(55)
         }
-       // self.backgroundColor = .systemIndigo
-        self.addSubview(self.imageView)
-        self.imageView.snp.makeConstraints {
+        
+        self.addSubview(self.scrollView)
+        self.scrollView.snp.makeConstraints {
             $0.left.top.right.equalToSuperview()
-            $0.height.equalTo(self.imageView.snp.width)
+            $0.height.equalTo(self.scrollView.snp.width)
         }
         
         self.addSubview(self.actionsContainer)
@@ -138,7 +131,6 @@ final class CellImagesView: UIView {
             $0.width.height.equalTo(40)
         }
         
-        
         self.pageControl.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
         }
@@ -150,22 +142,30 @@ final class CellImagesView: UIView {
             $0.width.height.equalTo(40)
         }
         
-        
-        self.imageView.addSubview(self.scrollView)
-        self.scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        
         self.layoutIfNeeded()
     }
     
     private func arrangeScrollView(images: [String], scrollView: UIScrollView) {
         let imagesURLs = images.map { URL(string: $0) }
-        imagesURLs.forEach {
-            let imageView = UIImageView()
-            imageView.kf.setImage(with: $0)
-            imageView.contentMode = .scaleToFill
+        var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        for index in 0..<imagesURLs.count {
+            frame.origin.x = scrollView.frame.size.width * CGFloat(index)
+            frame.size = scrollView.frame.size
+            let imageView = UIImageView(frame: frame)
+            imageView.frame = frame
+            imageView.kf.indicatorType = .activity
+            imageView.kf.setImage(with: imagesURLs[index])
             scrollView.addSubview(imageView)
         }
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width * CGFloat(images.count),
+                                        height: scrollView.frame.size.height)
+        scrollView.delegate = self
+    }
+    
+    // MARK: - ScrollView Delegate
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = self.scrollView.contentOffset.x / self.scrollView.frame.size.width
+        self.pageControl.currentPage = Int(pageNumber)
     }
 }
