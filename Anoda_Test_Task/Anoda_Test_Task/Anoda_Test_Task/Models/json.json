@@ -4,48 +4,48 @@
         "author": {
             "id": "222",
             "username": "Julia_Vorotchenko",
-            "profile_picture": "https://i.picsum.photos/id/953/200/200.jpg"
+            "profile_picture": "https://loremflickr.com/200/200/red"
         },
         "location": "Kyiv, Ukraine",
-        "images": ["https://i.picsum.photos/id/527/600/600.jpg",
-        "https://i.picsum.photos/id/529/600/600.jpg"],
+        "images": ["https://loremflickr.com/500/500/ocean",
+        "https://loremflickr.com/500/500/sunrise"],
         "is_liked": false,
         "is_saved": false,
         "liked_by": [
             {
                 "id": "223",
                 "username": "vita_korol",
-                "profile_picture": "https://i.picsum.photos/id/579/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             },
             {
                 "id": "224",
                 "username": "kuzia_cat",
-                "profile_picture": "https://i.picsum.photos/id/459/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             },
             {
                 "id": "235",
                 "username": "Vasya_Ivanov",
-                "profile_picture": "https://i.picsum.photos/id/429/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             },
             {
                 "id": "265",
                 "username": "Lovewly",
-                "profile_picture": "https://i.picsum.photos/id/429/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             },
             {
                 "id": "285",
                 "username": "Arisha_Ken",
-                "profile_picture": "https://i.picsum.photos/id/429/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             },
             {
                 "id": "295",
                 "username": "pupkin_vasya",
-                "profile_picture": "https://i.picsum.photos/id/429/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             },
             {
                 "id": "325",
                 "username": "lina56",
-                "profile_picture": "https://i.picsum.photos/id/429/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             }
         ],
         "description": {
@@ -53,7 +53,7 @@
             "author": {
                 "id": "222",
                 "username": "Julia_Vorotchenko",
-                "profile_picture": "https://i.picsum.photos/id/953/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             }
         },
         "created_time": "1591469048"
@@ -63,28 +63,28 @@
         "author": {
             "id": "222",
             "username": "Julia_Vorotchenko",
-            "profile_picture": "https://i.picsum.photos/id/953/200/200.jpg"
+            "profile_picture": "https://loremflickr.com/200/200"
         },
         "location": "Kyiv, Ukraine",
-        "images": ["https://i.picsum.photos/id/229/600/600.jpg",
-        "https://i.picsum.photos/id/129/600/600.jpg"],
+        "images": ["https://loremflickr.com/500/500/cat",
+        "https://loremflickr.com/500/500/cat"],
         "is_liked": false,
         "is_saved": false,
         "liked_by": [
             {
                 "id": "226",
                 "username": "Liza_Vasilevskaya",
-                "profile_picture": "https://i.picsum.photos/id/415/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             },
             {
                 "id": "227",
                 "username": "Kluchik",
-                "profile_picture": "https://i.picsum.photos/id/15/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             },
             {
                 "id": "228",
                 "username": "Gadya_Petrovich",
-                "profile_picture": "https://i.picsum.photos/id/111/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             }
         ],
         "description": {
@@ -92,7 +92,7 @@
             "author": {
                 "id": "222",
                 "username": "Julia_Vorotchenko",
-                "profile_picture": "https://i.picsum.photos/id/953/200/200.jpg"
+                "profile_picture": "https://loremflickr.com/200/200"
             }
         },
         "created_time": "1591469371"

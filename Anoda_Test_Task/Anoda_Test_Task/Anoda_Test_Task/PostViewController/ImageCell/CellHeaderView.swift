@@ -58,6 +58,7 @@ final class CellHeaderView: UIView {
     
     private var authorButton: UIButton = {
         let authorButton = UIButton()
+        authorButton.backgroundColor = .clear
         return authorButton
     }()
     
@@ -67,8 +68,6 @@ final class CellHeaderView: UIView {
         actionButton.setImage(UIImage(named: "more"), for: .normal)
         return actionButton
     }()
-    
-    
     
     // MARK: - Initialization
     
@@ -135,9 +134,9 @@ final class CellHeaderView: UIView {
     // MARK: - Public methods
     
     func fill(authorImageURL: String?, authorName: String, locaion: String) {
-        guard let imageURL = authorImageURL else { return }
-        let url = URL(string: imageURL)
-        self.authorProfileImage.kf.setImage(with: url)
+        guard let url = authorImageURL else { return }
+        guard let imageURL = URL.init(string: url) else { return }
+        self.authorProfileImage.kf.setImage(with: imageURL)
         self.authorNameLabel.text = authorName
         self.locationLabel.text = locaion
         self.actionButton.setImage(UIImage(named: "more"), for: .normal)

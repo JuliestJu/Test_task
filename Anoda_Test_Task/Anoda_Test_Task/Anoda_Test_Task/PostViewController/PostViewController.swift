@@ -8,8 +8,7 @@
 
 import UIKit
 
-
-class PostViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+final class PostViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     private lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()

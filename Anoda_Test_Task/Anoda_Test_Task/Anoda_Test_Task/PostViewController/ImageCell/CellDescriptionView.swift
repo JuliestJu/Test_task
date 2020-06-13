@@ -86,10 +86,14 @@ final class CellDescriptionView: UIView {
         
         let likesCalculated = self.calculateLikes(from: usersWhoLiked)
         
-        let likedByString = NSAttributedString(string: "Liked by ", attributes: regularAttributes)
-        let firstThreeLikers = NSAttributedString(string: likesCalculated.0.joined(separator: ", "), attributes: boldAttributes)
-        let andString = NSAttributedString(string: " and ", attributes: regularAttributes)
-        let othersString = NSAttributedString(string: likesCalculated.1 + " others", attributes: boldAttributes)
+        let likedByString = NSAttributedString(string: "Liked by ",
+                                               attributes: regularAttributes as [NSAttributedString.Key : Any])
+        let firstThreeLikers = NSAttributedString(string: likesCalculated.0.joined(separator: ", "),
+                                                  attributes: boldAttributes as [NSAttributedString.Key : Any])
+        let andString = NSAttributedString(string: " and ",
+                                           attributes: regularAttributes as [NSAttributedString.Key : Any])
+        let othersString = NSAttributedString(string: likesCalculated.1 + " others",
+                                              attributes: boldAttributes as [NSAttributedString.Key : Any])
         
         if usersWhoLiked.count > 3 {
             finalString = likedByString + firstThreeLikers + andString + othersString

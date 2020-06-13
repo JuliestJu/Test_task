@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostCollecttionViewCell: UICollectionViewCell {
+final class PostCollecttionViewCell: UICollectionViewCell {
     
     static let identifier = "PostCollecttionViewCell"
     let headerView = CellHeaderView()
