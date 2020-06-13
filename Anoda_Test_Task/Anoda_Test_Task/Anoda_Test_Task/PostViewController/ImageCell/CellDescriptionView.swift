@@ -15,7 +15,6 @@ final class CellDescriptionView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 5
         return stackView
     }()
     
@@ -67,7 +66,9 @@ final class CellDescriptionView: UIView {
         self.backgroundColor = .systemTeal
         self.addSubview(self.stackView)
         self.stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.bottom.equalToSuperview()
+            $0.left.equalToSuperview().inset(10)
+            $0.right.equalToSuperview().inset(10)
         }
         
         self.stackView.addArrangedSubview(self.likedByLabel)

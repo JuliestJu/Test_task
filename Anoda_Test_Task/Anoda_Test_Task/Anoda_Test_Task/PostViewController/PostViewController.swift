@@ -52,7 +52,7 @@ class PostViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - CollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

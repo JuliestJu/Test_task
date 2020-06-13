@@ -84,7 +84,7 @@ final class CellHeaderView: UIView {
     // MARK: - UI Setup
     
     private func setupUI() {
-        self.backgroundColor = .systemTeal
+        //self.backgroundColor = .systemTeal
         self.snp.makeConstraints {
             $0.height.equalTo(55)
         }
