@@ -15,6 +15,7 @@ final class CellDescriptionView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fill
+        stackView.spacing = 5
         return stackView
     }()
     
@@ -36,7 +37,7 @@ final class CellDescriptionView: UIView {
         let createdTimeLabel = UILabel()
         createdTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         createdTimeLabel.numberOfLines = 1
-        createdTimeLabel.font = UIFont(name: "ProximaNovaThin", size: 13)
+        createdTimeLabel.font = UIFont(name: "NunitoSans-ExtraLight", size: 13)
         createdTimeLabel.textColor = .lightGray
         return createdTimeLabel
     }()
@@ -55,7 +56,6 @@ final class CellDescriptionView: UIView {
     // MARK: - Public Methods
     
     func fill(likedBy: [String], description: String, date: Int, author: String) {
-      
         self.likedByLabel.attributedText = self.createLikedByString(usersWhoLiked: likedBy)
         self.postDescriptionLabel.attributedText = self.createDescriptionString(author: author, description: description)
         self.createdTimeLabel.text = self.makeTimeDiffString(timeStamp: date)
@@ -80,8 +80,8 @@ final class CellDescriptionView: UIView {
     private func createLikedByString(usersWhoLiked: [String]) -> NSAttributedString {
         var finalString = NSAttributedString()
         
-        let regularAttributes = [NSAttributedString.Key.font: UIFont(name: "ProximaNovaRegular", size: 13)]
-        let boldAttributes = [NSAttributedString.Key.font: UIFont(name: "ProximaNovaAltBold", size: 13)]
+        let regularAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Regular", size: 15)]
+        let boldAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 15)]
         
         let likesCalculated = self.calculateLikes(from: usersWhoLiked)
         
@@ -105,17 +105,18 @@ final class CellDescriptionView: UIView {
         
         let wordsArray = description.components(separatedBy: .whitespaces)
         
-        let blueRegularAtributes = [NSAttributedString.Key.font: UIFont(name: "ProximaNovaRegular", size: 13),
+        let blueRegularAtributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Regular", size: 15),
                                     NSAttributedString.Key.foregroundColor: UIColor.systemBlue]
-        let boldAttributes = [NSAttributedString.Key.font: UIFont(name: "ProximaNovaAltBold", size: 13)]
-        let authorAttributedString = NSAttributedString(string: author, attributes: boldAttributes)
+        let regularAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Regular", size: 15)]
+        let boldAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 15)]
+        let authorAttributedString = NSAttributedString(string: author + " ", attributes: boldAttributes)
         
         
         wordsArray.forEach {
             if $0.contains("#") || $0.contains("@") {
                 descrString.append(NSAttributedString(string: $0, attributes: blueRegularAtributes as [NSAttributedString.Key : Any]))
             } else {
-                descrString.append(NSAttributedString(string: $0))
+                descrString.append(NSAttributedString(string: $0, attributes: regularAttributes as [NSAttributedString.Key : Any]))
             }
         }
         

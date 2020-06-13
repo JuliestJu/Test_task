@@ -24,6 +24,9 @@
 		CDB1F3972493EE70008B31D2 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F3962493EE70008B31D2 /* JSONParser.swift */; };
 		CDB1F3992494C03E008B31D2 /* AttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F3982494C03E008B31D2 /* AttributedString+Extension.swift */; };
 		CDB1F39B2494CC8E008B31D2 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F39A2494CC8E008B31D2 /* Sequence+Extension.swift */; };
+		CDB1F3AA249504D3008B31D2 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB1F3A9249504D3008B31D2 /* NunitoSans-Bold.ttf */; };
+		CDB1F3AC249504E8008B31D2 /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB1F3AB249504E8008B31D2 /* NunitoSans-ExtraLight.ttf */; };
+		CDB1F3AE249504F8008B31D2 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB1F3AD249504F8008B31D2 /* NunitoSans-Regular.ttf */; };
 		CDDFBBFE2490166C009B4383 /* CellDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBBFD2490166C009B4383 /* CellDescriptionView.swift */; };
 		CDDFBC0024912179009B4383 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBBFF24912179009B4383 /* String+Extension.swift */; };
 		CDDFBC03249162A2009B4383 /* PostCollecttionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBC02249162A2009B4383 /* PostCollecttionViewCell.swift */; };
@@ -58,13 +61,6 @@
 		CD66DDBE248E315E00E08CA7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		CD66DDC0248E316500E08CA7 /* json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json.json; sourceTree = "<group>"; };
 		CD66DDC3248E93B100E08CA7 /* CellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeaderView.swift; sourceTree = "<group>"; };
-		CD66DDC7248E9C5500E08CA7 /* ProximaNovaBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaBlack.otf; sourceTree = "<group>"; };
-		CD66DDC8248E9C5600E08CA7 /* ProximaNovaBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaBold.otf; sourceTree = "<group>"; };
-		CD66DDC9248E9C5600E08CA7 /* ProximaNovaThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaThin.otf; sourceTree = "<group>"; };
-		CD66DDCA248E9C5600E08CA7 /* ProximaNovaRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaRegular.otf; sourceTree = "<group>"; };
-		CD66DDCB248E9C5600E08CA7 /* ProximaNovaAltThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaAltThin.otf; sourceTree = "<group>"; };
-		CD66DDCC248E9C5600E08CA7 /* ProximaNovaAltLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaAltLight.otf; sourceTree = "<group>"; };
-		CD66DDCD248E9C5600E08CA7 /* ProximaNovaAltBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProximaNovaAltBold.otf; sourceTree = "<group>"; };
 		CD66DDCE248EBE7100E08CA7 /* CellImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellImagesView.swift; sourceTree = "<group>"; };
 		CD76050A248E25E4005807D5 /* Anoda_Test_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anoda_Test_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD76050D248E25E4005807D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +78,9 @@
 		CDB1F3962493EE70008B31D2 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		CDB1F3982494C03E008B31D2 /* AttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+Extension.swift"; sourceTree = "<group>"; };
 		CDB1F39A2494CC8E008B31D2 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
+		CDB1F3A9249504D3008B31D2 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
+		CDB1F3AB249504E8008B31D2 /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		CDB1F3AD249504F8008B31D2 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
 		CDDFBBFD2490166C009B4383 /* CellDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDescriptionView.swift; sourceTree = "<group>"; };
 		CDDFBBFF24912179009B4383 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CDDFBC02249162A2009B4383 /* PostCollecttionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollecttionViewCell.swift; sourceTree = "<group>"; };
@@ -182,13 +181,9 @@
 		CD66DDC5248E9C2900E08CA7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				CD66DDCD248E9C5600E08CA7 /* ProximaNovaAltBold.otf */,
-				CD66DDCC248E9C5600E08CA7 /* ProximaNovaAltLight.otf */,
-				CD66DDCB248E9C5600E08CA7 /* ProximaNovaAltThin.otf */,
-				CD66DDC7248E9C5500E08CA7 /* ProximaNovaBlack.otf */,
-				CD66DDC8248E9C5600E08CA7 /* ProximaNovaBold.otf */,
-				CD66DDC9248E9C5600E08CA7 /* ProximaNovaThin.otf */,
-				CD66DDCA248E9C5600E08CA7 /* ProximaNovaRegular.otf */,
+				CDB1F3AD249504F8008B31D2 /* NunitoSans-Regular.ttf */,
+				CDB1F3A9249504D3008B31D2 /* NunitoSans-Bold.ttf */,
+				CDB1F3AB249504E8008B31D2 /* NunitoSans-ExtraLight.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -199,7 +194,6 @@
 				CD76050C248E25E4005807D5 /* Anoda_Test_Task */,
 				CD760523248E25E5005807D5 /* Anoda_Test_TaskTests */,
 				CD76052E248E25E5005807D5 /* Anoda_Test_TaskUITests */,
-				CD66DDC5248E9C2900E08CA7 /* Fonts */,
 				CD76050B248E25E4005807D5 /* Products */,
 				543590891EEE964CAA3872A4 /* Pods */,
 				08E0BF08A17292B5406219FA /* Frameworks */,
@@ -225,6 +219,7 @@
 				CD4BA44A2492307C005E4E9D /* Extensions */,
 				CD4BA44B249230A0005E4E9D /* App */,
 				CD76051B248E25E5005807D5 /* Info.plist */,
+				CD66DDC5248E9C2900E08CA7 /* Fonts */,
 			);
 			path = Anoda_Test_Task;
 			sourceTree = "<group>";
@@ -374,9 +369,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB1F3AC249504E8008B31D2 /* NunitoSans-ExtraLight.ttf in Resources */,
+				CDB1F3AA249504D3008B31D2 /* NunitoSans-Bold.ttf in Resources */,
 				CD66DDC1248E316500E08CA7 /* json.json in Resources */,
 				CD76051A248E25E5005807D5 /* LaunchScreen.storyboard in Resources */,
 				CD760517248E25E5005807D5 /* Assets.xcassets in Resources */,
+				CDB1F3AE249504F8008B31D2 /* NunitoSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

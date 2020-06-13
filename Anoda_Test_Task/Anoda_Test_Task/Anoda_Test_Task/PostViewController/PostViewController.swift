@@ -13,7 +13,8 @@ class PostViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     private lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = .init(width: self.view.frame.width, height: 650)
+        layout.itemSize = .init(width: self.view.frame.width, height: 650)
+        //через метод делегата считать
         layout.minimumLineSpacing = 2
         
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
@@ -56,7 +57,10 @@ class PostViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollecttionViewCell.identifier, for: indexPath) as! PostCollecttionViewCell
-        cell.fill(model: self.dataSource[0])
+        DispatchQueue.main.async {
+            cell.fill(model: self.dataSource[0])
+        }
+        
         return cell
     }
 }

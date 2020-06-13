@@ -140,7 +140,6 @@ final class CellImagesView: UIView {
         
         
         self.pageControl.snp.makeConstraints {
-            $0.height.equalToSuperview()
             $0.centerX.centerY.equalToSuperview()
         }
         
