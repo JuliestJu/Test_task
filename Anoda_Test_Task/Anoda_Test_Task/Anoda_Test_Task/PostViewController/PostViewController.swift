@@ -22,6 +22,13 @@ class PostViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return collectionView
     }()
     
+    private lazy var dataSource: [DataModel] = {
+        self.jsonParcer.parseJSON(file: "json")!
+    }()
+    
+    
+    private let jsonParcer = JSONParser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.reloadData()
@@ -48,8 +55,8 @@ class PostViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollecttionViewCell.identifier, for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollecttionViewCell.identifier, for: indexPath) as! PostCollecttionViewCell
+        cell.fill(model: self.dataSource[0])
         return cell
     }
 }

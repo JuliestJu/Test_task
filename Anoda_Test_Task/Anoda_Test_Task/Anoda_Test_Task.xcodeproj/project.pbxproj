@@ -21,6 +21,9 @@
 		CD76051A248E25E5005807D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD760518248E25E5005807D5 /* LaunchScreen.storyboard */; };
 		CD760525248E25E5005807D5 /* Anoda_Test_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD760524248E25E5005807D5 /* Anoda_Test_TaskTests.swift */; };
 		CD760530248E25E5005807D5 /* Anoda_Test_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76052F248E25E5005807D5 /* Anoda_Test_TaskUITests.swift */; };
+		CDB1F3972493EE70008B31D2 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F3962493EE70008B31D2 /* JSONParser.swift */; };
+		CDB1F3992494C03E008B31D2 /* AttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F3982494C03E008B31D2 /* AttributedString+Extension.swift */; };
+		CDB1F39B2494CC8E008B31D2 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F39A2494CC8E008B31D2 /* Sequence+Extension.swift */; };
 		CDDFBBFE2490166C009B4383 /* CellDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBBFD2490166C009B4383 /* CellDescriptionView.swift */; };
 		CDDFBC0024912179009B4383 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBBFF24912179009B4383 /* String+Extension.swift */; };
 		CDDFBC03249162A2009B4383 /* PostCollecttionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBC02249162A2009B4383 /* PostCollecttionViewCell.swift */; };
@@ -76,6 +79,9 @@
 		CD76052B248E25E5005807D5 /* Anoda_Test_TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Anoda_Test_TaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD76052F248E25E5005807D5 /* Anoda_Test_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anoda_Test_TaskUITests.swift; sourceTree = "<group>"; };
 		CD760531248E25E5005807D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDB1F3962493EE70008B31D2 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		CDB1F3982494C03E008B31D2 /* AttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+Extension.swift"; sourceTree = "<group>"; };
+		CDB1F39A2494CC8E008B31D2 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		CDDFBBFD2490166C009B4383 /* CellDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDescriptionView.swift; sourceTree = "<group>"; };
 		CDDFBBFF24912179009B4383 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CDDFBC02249162A2009B4383 /* PostCollecttionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollecttionViewCell.swift; sourceTree = "<group>"; };
@@ -142,12 +148,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CD4BA44A2492307C005E4E9D /* Lib */ = {
+		CD4BA44A2492307C005E4E9D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				CDDFBBFF24912179009B4383 /* String+Extension.swift */,
+				CDB1F3982494C03E008B31D2 /* AttributedString+Extension.swift */,
+				CDB1F39A2494CC8E008B31D2 /* Sequence+Extension.swift */,
 			);
-			path = Lib;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CD4BA44B249230A0005E4E9D /* App */ = {
@@ -211,9 +219,10 @@
 		CD76050C248E25E4005807D5 /* Anoda_Test_Task */ = {
 			isa = PBXGroup;
 			children = (
+				CDB1F3952493EE53008B31D2 /* Service */,
 				CDDFBC0124916249009B4383 /* PostViewController */,
 				CD4BA44924923061005E4E9D /* Models */,
-				CD4BA44A2492307C005E4E9D /* Lib */,
+				CD4BA44A2492307C005E4E9D /* Extensions */,
 				CD4BA44B249230A0005E4E9D /* App */,
 				CD76051B248E25E5005807D5 /* Info.plist */,
 			);
@@ -236,6 +245,14 @@
 				CD760531248E25E5005807D5 /* Info.plist */,
 			);
 			path = Anoda_Test_TaskUITests;
+			sourceTree = "<group>";
+		};
+		CDB1F3952493EE53008B31D2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CDB1F3962493EE70008B31D2 /* JSONParser.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		CDDFBC0124916249009B4383 /* PostViewController */ = {
@@ -487,6 +504,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB1F3972493EE70008B31D2 /* JSONParser.swift in Sources */,
+				CDB1F39B2494CC8E008B31D2 /* Sequence+Extension.swift in Sources */,
 				CDDFBC0024912179009B4383 /* String+Extension.swift in Sources */,
 				CDDFBBFE2490166C009B4383 /* CellDescriptionView.swift in Sources */,
 				CDDFBC03249162A2009B4383 /* PostCollecttionViewCell.swift in Sources */,
@@ -495,6 +514,7 @@
 				CD66DDC4248E93B100E08CA7 /* CellHeaderView.swift in Sources */,
 				CD76050E248E25E4005807D5 /* AppDelegate.swift in Sources */,
 				CD760510248E25E4005807D5 /* SceneDelegate.swift in Sources */,
+				CDB1F3992494C03E008B31D2 /* AttributedString+Extension.swift in Sources */,
 				CD66DDBF248E315E00E08CA7 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

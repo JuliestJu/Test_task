@@ -20,7 +20,6 @@ final class CellDescriptionView: UIView {
     
     var likedByLabel: UILabel = {
         let likedByLabel = UILabel()
-        likedByLabel.text = "I love Medium's membership — it gives me access to the stories I love by the"
         likedByLabel.translatesAutoresizingMaskIntoConstraints = false
         likedByLabel.numberOfLines = 0
         return likedByLabel
@@ -28,7 +27,6 @@ final class CellDescriptionView: UIView {
     
     var postDescriptionLabel: UILabel = {
         let postDescriptionLabel = UILabel()
-        postDescriptionLabel.text = "When adding an image the title is pushed to the right with the amount of the image width."
         postDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         postDescriptionLabel.numberOfLines = 0
         return postDescriptionLabel
@@ -36,7 +34,6 @@ final class CellDescriptionView: UIView {
     
     var createdTimeLabel: UILabel = {
         let createdTimeLabel = UILabel()
-        createdTimeLabel.text = "3 hours ago"
         createdTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         createdTimeLabel.numberOfLines = 1
         createdTimeLabel.font = UIFont(name: "ProximaNovaThin", size: 13)
@@ -57,9 +54,10 @@ final class CellDescriptionView: UIView {
     
     // MARK: - Public Methods
     
-    func fill(likedBy: [String], description: String, date: Int) {
-        self.likedByLabel.text = self.createLikedByString(usersWhoLiked: likedBy)
-        self.postDescriptionLabel.text = self.createDescriptionString(description: description)
+    func fill(likedBy: [String], description: String, date: Int, author: String) {
+      
+        self.likedByLabel.attributedText = self.createLikedByString(usersWhoLiked: likedBy)
+        self.postDescriptionLabel.attributedText = self.createDescriptionString(author: author, description: description)
         self.createdTimeLabel.text = self.makeTimeDiffString(timeStamp: date)
     }
     
@@ -76,46 +74,53 @@ final class CellDescriptionView: UIView {
         self.stackView.addArrangedSubview(self.postDescriptionLabel)
         self.stackView.addArrangedSubview(self.createdTimeLabel)
         
-        
-        
         self.layoutIfNeeded()
     }
     
-    private func createLikedByString(usersWhoLiked: [String]) -> String {
+    private func createLikedByString(usersWhoLiked: [String]) -> NSAttributedString {
+        var finalString = NSAttributedString()
+        
         let regularAttributes = [NSAttributedString.Key.font: UIFont(name: "ProximaNovaRegular", size: 13)]
         let boldAttributes = [NSAttributedString.Key.font: UIFont(name: "ProximaNovaAltBold", size: 13)]
+        
         let likesCalculated = self.calculateLikes(from: usersWhoLiked)
         
-        let likedByString = NSAttributedString(string: "Liked By ",
-                                               attributes: regularAttributes as [NSAttributedString.Key : Any])
-        let firstThreeLikers = NSAttributedString(string: likesCalculated.0.joined(separator: ", "),
-                                                  attributes: boldAttributes as [NSAttributedString.Key : Any])
-        let andString = NSAttributedString(string: " and",
-                                           attributes: regularAttributes as [NSAttributedString.Key : Any])
-        let othersString = NSAttributedString(string: likesCalculated.1 + " others",
-                                              attributes: boldAttributes as [NSAttributedString.Key : Any])
+        let likedByString = NSAttributedString(string: "Liked by ", attributes: regularAttributes)
+        let firstThreeLikers = NSAttributedString(string: likesCalculated.0.joined(separator: ", "), attributes: boldAttributes)
+        let andString = NSAttributedString(string: " and ", attributes: regularAttributes)
+        let othersString = NSAttributedString(string: likesCalculated.1 + " others", attributes: boldAttributes)
         
         if usersWhoLiked.count > 3 {
-            return "\(likedByString) + \(firstThreeLikers) + \(andString) + \(othersString)"
+            finalString = likedByString + firstThreeLikers + andString + othersString
+            return finalString
         } else {
-            return "\(likedByString) + \(firstThreeLikers)"
+            finalString = likedByString + firstThreeLikers
+            return finalString
         }
     }
     
-    private func createDescriptionString(description: String) -> String {
-        var descrString: [String] = []
+    private func createDescriptionString(author: String, description: String) -> NSAttributedString {
+        var descrString: [NSAttributedString] = []
+        var finalString = NSAttributedString()
+        
         let wordsArray = description.components(separatedBy: .whitespaces)
+        
         let blueRegularAtributes = [NSAttributedString.Key.font: UIFont(name: "ProximaNovaRegular", size: 13),
                                     NSAttributedString.Key.foregroundColor: UIColor.systemBlue]
+        let boldAttributes = [NSAttributedString.Key.font: UIFont(name: "ProximaNovaAltBold", size: 13)]
+        let authorAttributedString = NSAttributedString(string: author, attributes: boldAttributes)
+        
         
         wordsArray.forEach {
             if $0.contains("#") || $0.contains("@") {
-                descrString.append("\(NSAttributedString(string: $0, attributes: blueRegularAtributes as [NSAttributedString.Key : Any]))")
+                descrString.append(NSAttributedString(string: $0, attributes: blueRegularAtributes as [NSAttributedString.Key : Any]))
             } else {
-                descrString.append($0)
+                descrString.append(NSAttributedString(string: $0))
             }
         }
-        return descrString.joined(separator: " ")
+        
+        finalString = authorAttributedString + descrString.joined(with: " ")
+        return finalString
     }
     
     private func calculateLikes(from users: [String]) -> ([String], String) {
