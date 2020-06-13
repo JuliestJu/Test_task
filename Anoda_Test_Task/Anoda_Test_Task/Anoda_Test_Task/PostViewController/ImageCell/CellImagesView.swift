@@ -44,7 +44,6 @@ final class CellImagesView: UIView {
         let likeButton = UIButton()
         likeButton.contentMode = .scaleToFill
         likeButton.translatesAutoresizingMaskIntoConstraints = false
-        likeButton.backgroundColor = .blue
         return likeButton
     }()
     
@@ -70,7 +69,6 @@ final class CellImagesView: UIView {
     
     private var saveButton: UIButton = {
         let saveButton = UIButton()
-        saveButton.backgroundColor = .blue
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         return saveButton
     }()
@@ -96,8 +94,10 @@ final class CellImagesView: UIView {
     // MARK: - UI Setup
     
     private func setupUI() {
-        
-        self.backgroundColor = .systemIndigo
+        self.snp.makeConstraints {
+            $0.height.equalTo(self.snp.width).offset(55)
+        }
+       // self.backgroundColor = .systemIndigo
         self.addSubview(self.imageView)
         self.imageView.snp.makeConstraints {
             $0.left.top.right.equalToSuperview()
@@ -107,7 +107,7 @@ final class CellImagesView: UIView {
         self.addSubview(self.actionsContainer)
         self.actionsContainer.snp.makeConstraints {
             $0.left.right.bottom.equalToSuperview()
-            $0.height.equalTo(60)
+            $0.height.equalTo(55)
         }
         
         self.actionsContainer.addSubview(self.leftButtonsStackView)
@@ -140,7 +140,6 @@ final class CellImagesView: UIView {
         
         
         self.pageControl.snp.makeConstraints {
-            $0.height.equalToSuperview()
             $0.centerX.centerY.equalToSuperview()
         }
         

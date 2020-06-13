@@ -35,7 +35,7 @@ final class CellHeaderView: UIView {
         authorNameLabel.lineBreakMode = .byCharWrapping
         authorNameLabel.numberOfLines = 0
         authorNameLabel.textColor = .black
-        authorNameLabel.font = UIFont(name: "ProximaNovaRegular", size: 16)
+        authorNameLabel.font = UIFont(name: "NunitoSans-Bold", size: 16)
         authorNameLabel.isUserInteractionEnabled = true
         authorNameLabel.text = "ajsjdkfkkfk xkckmcmv"
         return authorNameLabel
@@ -48,7 +48,7 @@ final class CellHeaderView: UIView {
         locationLabel.lineBreakMode = .byCharWrapping
         locationLabel.numberOfLines = 0
         locationLabel.textColor = .darkGray
-        locationLabel.font = UIFont(name: "ProximaNovaRegular", size: 12)
+        locationLabel.font = UIFont(name: "NunitoSans-Regular", size: 14)
         locationLabel.isUserInteractionEnabled = true
         locationLabel.text = "dmmdmcmcmcm"
         return locationLabel
@@ -84,7 +84,7 @@ final class CellHeaderView: UIView {
     // MARK: - UI Setup
     
     private func setupUI() {
-        self.backgroundColor = .systemTeal
+        //self.backgroundColor = .systemTeal
         self.snp.makeConstraints {
             $0.height.equalTo(55)
         }

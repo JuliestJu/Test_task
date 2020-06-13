@@ -38,12 +38,12 @@ class PostCollecttionViewCell: UICollectionViewCell {
     
     // MARK: - Public methods
     
-    func fill(model: DataModel) {
+    public func fill(model: DataModel) {
         self.headerView.fill(authorImageURL: model.author.profileImage, authorName: model.author.username, locaion: model.location)
         self.cellImagesView.fill(imageURLstrings: model.images)
-        self.cellDescriptionView.fill(likedBy: model.likedBy.map {$0.username},
+        self.cellDescriptionView.fill(likedBy: model.likedBy.map { $0.username },
                                       description: model.description.text,
-                                      date: Int(model.createdTime)!)
+                                      date: Int(model.createdTime)!, author: model.author.username)
     }
     
     // MARK: - Private methods

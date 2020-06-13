@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct DataModel: Decodable {
+struct DataModel: Decodable, Hashable {
     let id: String
     let author: Author
     let location: String
@@ -33,7 +33,7 @@ struct DataModel: Decodable {
     }
 }
 
-struct Author: Decodable {
+struct Author: Decodable, Hashable {
     let id: String
     let username: String
     let profileImage: String
@@ -45,12 +45,12 @@ struct Author: Decodable {
     }
 }
 
-struct Description: Decodable {
+struct Description: Decodable, Hashable {
     let text: String
     let author: Author
     
     enum CodingKeys: String, CodingKey {
        case text = "text"
-       case author = "auhor"
+       case author = "author"
     }
 }
