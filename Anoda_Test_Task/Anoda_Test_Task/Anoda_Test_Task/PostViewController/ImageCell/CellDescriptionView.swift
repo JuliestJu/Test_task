@@ -63,7 +63,6 @@ final class CellDescriptionView: UIView {
     // MARK: - Private Methods
     
     private func setupUI() {
-        self.backgroundColor = .systemTeal
         self.addSubview(self.stackView)
         self.stackView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()

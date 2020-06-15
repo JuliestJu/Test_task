@@ -57,7 +57,5 @@ final class PostViewController: UIViewController, UICollectionViewDelegate, UICo
         }
         return cell
     }
-    
-
 }
 

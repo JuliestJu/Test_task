@@ -138,13 +138,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CD4BA44924923061005E4E9D /* Models */ = {
+		CD4BA44924923061005E4E9D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CD66DDBE248E315E00E08CA7 /* DataModel.swift */,
 				CD66DDC0248E316500E08CA7 /* json.json */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CD4BA44A2492307C005E4E9D /* Extensions */ = {
@@ -213,9 +213,9 @@
 		CD76050C248E25E4005807D5 /* Anoda_Test_Task */ = {
 			isa = PBXGroup;
 			children = (
-				CDB1F3952493EE53008B31D2 /* Service */,
 				CDDFBC0124916249009B4383 /* PostViewController */,
-				CD4BA44924923061005E4E9D /* Models */,
+				CD4BA44924923061005E4E9D /* Model */,
+				CDB1F3952493EE53008B31D2 /* Parser */,
 				CD4BA44A2492307C005E4E9D /* Extensions */,
 				CD4BA44B249230A0005E4E9D /* App */,
 				CD76051B248E25E5005807D5 /* Info.plist */,
@@ -242,12 +242,12 @@
 			path = Anoda_Test_TaskUITests;
 			sourceTree = "<group>";
 		};
-		CDB1F3952493EE53008B31D2 /* Service */ = {
+		CDB1F3952493EE53008B31D2 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
 				CDB1F3962493EE70008B31D2 /* JSONParser.swift */,
 			);
-			path = Service;
+			path = Parser;
 			sourceTree = "<group>";
 		};
 		CDDFBC0124916249009B4383 /* PostViewController */ = {

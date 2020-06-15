@@ -83,7 +83,6 @@ final class CellHeaderView: UIView {
     // MARK: - UI Setup
     
     private func setupUI() {
-        //self.backgroundColor = .systemTeal
         self.snp.makeConstraints {
             $0.height.equalTo(55)
         }
@@ -121,14 +120,14 @@ final class CellHeaderView: UIView {
         self.layoutIfNeeded()
     }
     
-    private func UIElementsConfig() {
+    private func authorImageConfigure() {
         self.authorProfileImage.layer.cornerRadius = self.authorProfileImage.frame.height / 2
         self.authorProfileImage.layer.masksToBounds = true
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.UIElementsConfig()
+        self.authorImageConfigure()
     }
     
     // MARK: - Public methods
