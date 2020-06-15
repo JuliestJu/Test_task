@@ -13,7 +13,6 @@ final class PostViewController: UIViewController, UICollectionViewDelegate, UICo
     private lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = .init(width: self.view.frame.width, height: 650)
-        //через метод делегата считать
         layout.minimumLineSpacing = 2
         
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
@@ -21,12 +20,9 @@ final class PostViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
-    
     private lazy var dataSource: [DataModel] = {
         self.jsonParcer.parseJSON(file: "json")!
     }()
-    
-    
     private let jsonParcer = JSONParser()
     
     override func viewDidLoad() {
@@ -51,16 +47,17 @@ final class PostViewController: UIViewController, UICollectionViewDelegate, UICo
     // MARK: - CollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return self.dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollecttionViewCell.identifier, for: indexPath) as! PostCollecttionViewCell
         DispatchQueue.main.async {
-            cell.fill(model: self.dataSource[0])
+            cell.fill(model: self.dataSource[indexPath.item])
         }
-        
         return cell
     }
+    
+
 }
 

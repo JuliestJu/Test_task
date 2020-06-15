@@ -63,11 +63,13 @@
         "author": {
             "id": "222",
             "username": "Julia_Vorotchenko",
-            "profile_picture": "https://loremflickr.com/200/200"
+            "profile_picture": "https://loremflickr.com/200/200/red"
         },
         "location": "Kyiv, Ukraine",
-        "images": ["https://loremflickr.com/500/500/cat",
-        "https://loremflickr.com/500/500/cat"],
+        "images": ["https://loremflickr.com/500/500/spring",
+        "https://loremflickr.com/500/500/france",
+        "https://loremflickr.com/500/500/car",
+        "https://loremflickr.com/500/500/heart"],
         "is_liked": false,
         "is_saved": false,
         "liked_by": [
