@@ -75,7 +75,7 @@ final class CellDescriptionView: UIView {
         
     }
     
-    private func createLikedByString(usersWhoLiked: [String]) -> NSAttributedString {
+    func createLikedByString(usersWhoLiked: [String]) -> NSAttributedString {
         var finalString = NSAttributedString()
         
         let regularAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Regular", size: 15)]
@@ -101,7 +101,7 @@ final class CellDescriptionView: UIView {
         }
     }
     
-    private func createDescriptionString(author: String, description: String) -> NSAttributedString {
+    func createDescriptionString(author: String, description: String) -> NSAttributedString {
         var descrString: [NSAttributedString] = []
         var finalString = NSAttributedString()
         
@@ -126,7 +126,7 @@ final class CellDescriptionView: UIView {
         return finalString
     }
     
-    private func calculateLikes(from users: [String]) -> ([String], String) {
+    func calculateLikes(from users: [String]) -> ([String], String) {
         if users.count > 3 {
             return ((Array(users.prefix(upTo: 3)), String(users.count - 3)))
         } else {
@@ -134,7 +134,7 @@ final class CellDescriptionView: UIView {
         }
     }
     
-    private func makeTimeDiffString(timeStamp: Int) -> String? {
+    func makeTimeDiffString(timeStamp: Int) -> String? {
         let madeAt = Date(timeIntervalSince1970: Double(timeStamp))
         return String.getDiffTime(olderDate: madeAt, newerDate: Date())?.uppercased()
     }

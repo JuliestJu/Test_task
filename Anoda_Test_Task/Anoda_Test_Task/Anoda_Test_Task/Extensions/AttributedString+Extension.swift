@@ -1,4 +1,4 @@
-//
+ //
 //  File.swift
 //  Anoda_Test_Task
 //

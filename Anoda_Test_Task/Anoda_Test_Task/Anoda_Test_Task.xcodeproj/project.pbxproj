@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2EBF402D602F2B3AD415998E /* Pods_Anoda_Test_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB67E91909C3DA2853B4057 /* Pods_Anoda_Test_Task.framework */; };
-		304954FCCB005F5CDC8D4080 /* Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D8FB7101CB09A35F4C9977 /* Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework */; };
 		9E4A869CAF9B8E0ABA8A1564 /* Pods_Anoda_Test_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9E47383FEB307B34398B2E /* Pods_Anoda_Test_TaskTests.framework */; };
 		CD66DDBF248E315E00E08CA7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66DDBE248E315E00E08CA7 /* DataModel.swift */; };
 		CD66DDC1248E316500E08CA7 /* json.json in Resources */ = {isa = PBXBuildFile; fileRef = CD66DDC0248E316500E08CA7 /* json.json */; };
@@ -20,7 +19,6 @@
 		CD760517248E25E5005807D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD760516248E25E5005807D5 /* Assets.xcassets */; };
 		CD76051A248E25E5005807D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD760518248E25E5005807D5 /* LaunchScreen.storyboard */; };
 		CD760525248E25E5005807D5 /* Anoda_Test_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD760524248E25E5005807D5 /* Anoda_Test_TaskTests.swift */; };
-		CD760530248E25E5005807D5 /* Anoda_Test_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76052F248E25E5005807D5 /* Anoda_Test_TaskUITests.swift */; };
 		CDB1F3972493EE70008B31D2 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F3962493EE70008B31D2 /* JSONParser.swift */; };
 		CDB1F3992494C03E008B31D2 /* AttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F3982494C03E008B31D2 /* AttributedString+Extension.swift */; };
 		CDB1F39B2494CC8E008B31D2 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB1F39A2494CC8E008B31D2 /* Sequence+Extension.swift */; };
@@ -34,13 +32,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		CD760521248E25E5005807D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD760502248E25E4005807D5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD760509248E25E4005807D5;
-			remoteInfo = Anoda_Test_Task;
-		};
-		CD76052C248E25E5005807D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD760502248E25E4005807D5 /* Project object */;
 			proxyType = 1;
@@ -72,9 +63,6 @@
 		CD760520248E25E5005807D5 /* Anoda_Test_TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Anoda_Test_TaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD760524248E25E5005807D5 /* Anoda_Test_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anoda_Test_TaskTests.swift; sourceTree = "<group>"; };
 		CD760526248E25E5005807D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD76052B248E25E5005807D5 /* Anoda_Test_TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Anoda_Test_TaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD76052F248E25E5005807D5 /* Anoda_Test_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anoda_Test_TaskUITests.swift; sourceTree = "<group>"; };
-		CD760531248E25E5005807D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDB1F3962493EE70008B31D2 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		CDB1F3982494C03E008B31D2 /* AttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+Extension.swift"; sourceTree = "<group>"; };
 		CDB1F39A2494CC8E008B31D2 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
@@ -101,14 +89,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E4A869CAF9B8E0ABA8A1564 /* Pods_Anoda_Test_TaskTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD760528248E25E5005807D5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				304954FCCB005F5CDC8D4080 /* Pods_Anoda_Test_Task_Anoda_Test_TaskUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +173,6 @@
 			children = (
 				CD76050C248E25E4005807D5 /* Anoda_Test_Task */,
 				CD760523248E25E5005807D5 /* Anoda_Test_TaskTests */,
-				CD76052E248E25E5005807D5 /* Anoda_Test_TaskUITests */,
 				CD76050B248E25E4005807D5 /* Products */,
 				543590891EEE964CAA3872A4 /* Pods */,
 				08E0BF08A17292B5406219FA /* Frameworks */,
@@ -205,7 +184,6 @@
 			children = (
 				CD76050A248E25E4005807D5 /* Anoda_Test_Task.app */,
 				CD760520248E25E5005807D5 /* Anoda_Test_TaskTests.xctest */,
-				CD76052B248E25E5005807D5 /* Anoda_Test_TaskUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,15 +209,6 @@
 				CD760526248E25E5005807D5 /* Info.plist */,
 			);
 			path = Anoda_Test_TaskTests;
-			sourceTree = "<group>";
-		};
-		CD76052E248E25E5005807D5 /* Anoda_Test_TaskUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CD76052F248E25E5005807D5 /* Anoda_Test_TaskUITests.swift */,
-				CD760531248E25E5005807D5 /* Info.plist */,
-			);
-			path = Anoda_Test_TaskUITests;
 			sourceTree = "<group>";
 		};
 		CDB1F3952493EE53008B31D2 /* Parser */ = {
@@ -301,26 +270,6 @@
 			productReference = CD760520248E25E5005807D5 /* Anoda_Test_TaskTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CD76052A248E25E5005807D5 /* Anoda_Test_TaskUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CD76053A248E25E5005807D5 /* Build configuration list for PBXNativeTarget "Anoda_Test_TaskUITests" */;
-			buildPhases = (
-				5E5049025162DAD74CB42D53 /* [CP] Check Pods Manifest.lock */,
-				CD760527248E25E5005807D5 /* Sources */,
-				CD760528248E25E5005807D5 /* Frameworks */,
-				CD760529248E25E5005807D5 /* Resources */,
-				8FCE7FA0D92FA8623B5594AE /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CD76052D248E25E5005807D5 /* PBXTargetDependency */,
-			);
-			name = Anoda_Test_TaskUITests;
-			productName = Anoda_Test_TaskUITests;
-			productReference = CD76052B248E25E5005807D5 /* Anoda_Test_TaskUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -335,10 +284,6 @@
 						CreatedOnToolsVersion = 11.5;
 					};
 					CD76051F248E25E5005807D5 = {
-						CreatedOnToolsVersion = 11.5;
-						TestTargetID = CD760509248E25E4005807D5;
-					};
-					CD76052A248E25E5005807D5 = {
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = CD760509248E25E4005807D5;
 					};
@@ -359,7 +304,6 @@
 			targets = (
 				CD760509248E25E4005807D5 /* Anoda_Test_Task */,
 				CD76051F248E25E5005807D5 /* Anoda_Test_TaskTests */,
-				CD76052A248E25E5005807D5 /* Anoda_Test_TaskUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -379,13 +323,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CD76051E248E25E5005807D5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD760529248E25E5005807D5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -415,45 +352,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5E5049025162DAD74CB42D53 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Anoda_Test_Task-Anoda_Test_TaskUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8FCE7FA0D92FA8623B5594AE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Anoda_Test_Task-Anoda_Test_TaskUITests/Pods-Anoda_Test_Task-Anoda_Test_TaskUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Anoda_Test_Task-Anoda_Test_TaskUITests/Pods-Anoda_Test_Task-Anoda_Test_TaskUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Anoda_Test_Task-Anoda_Test_TaskUITests/Pods-Anoda_Test_Task-Anoda_Test_TaskUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		91FAC649422919C255837401 /* [CP] Embed Pods Frameworks */ = {
@@ -525,14 +423,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD760527248E25E5005807D5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD760530248E25E5005807D5 /* Anoda_Test_TaskUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -540,11 +430,6 @@
 			isa = PBXTargetDependency;
 			target = CD760509248E25E4005807D5 /* Anoda_Test_Task */;
 			targetProxy = CD760521248E25E5005807D5 /* PBXContainerItemProxy */;
-		};
-		CD76052D248E25E5005807D5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CD760509248E25E4005807D5 /* Anoda_Test_Task */;
-			targetProxy = CD76052C248E25E5005807D5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -756,46 +641,6 @@
 			};
 			name = Release;
 		};
-		CD76053B248E25E5005807D5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81124C70079CC09C23A439CF /* Pods-Anoda_Test_Task-Anoda_Test_TaskUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Anoda_Test_TaskUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "XoXo.Anoda-Test-TaskUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Anoda_Test_Task;
-			};
-			name = Debug;
-		};
-		CD76053C248E25E5005807D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9BD09706681A362CA1FE077 /* Pods-Anoda_Test_Task-Anoda_Test_TaskUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Anoda_Test_TaskUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "XoXo.Anoda-Test-TaskUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Anoda_Test_Task;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -822,15 +667,6 @@
 			buildConfigurations = (
 				CD760538248E25E5005807D5 /* Debug */,
 				CD760539248E25E5005807D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CD76053A248E25E5005807D5 /* Build configuration list for PBXNativeTarget "Anoda_Test_TaskUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD76053B248E25E5005807D5 /* Debug */,
-				CD76053C248E25E5005807D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
