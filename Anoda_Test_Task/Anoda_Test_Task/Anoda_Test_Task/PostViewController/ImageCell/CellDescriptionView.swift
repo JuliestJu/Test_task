@@ -63,19 +63,16 @@ final class CellDescriptionView: UIView {
     // MARK: - Private Methods
     
     private func setupUI() {
-        self.backgroundColor = .systemTeal
         self.addSubview(self.stackView)
         self.stackView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
-            $0.left.equalToSuperview().inset(10)
-            $0.right.equalToSuperview().inset(10)
+            $0.width.equalToSuperview().offset(-20)
+            $0.centerX.equalToSuperview()
         }
-        
         self.stackView.addArrangedSubview(self.likedByLabel)
         self.stackView.addArrangedSubview(self.postDescriptionLabel)
         self.stackView.addArrangedSubview(self.createdTimeLabel)
         
-        self.layoutIfNeeded()
     }
     
     private func createLikedByString(usersWhoLiked: [String]) -> NSAttributedString {
@@ -114,7 +111,7 @@ final class CellDescriptionView: UIView {
                                     NSAttributedString.Key.foregroundColor: UIColor.systemBlue]
         let regularAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Regular", size: 15)]
         let boldAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 15)]
-        let authorAttributedString = NSAttributedString(string: author + " ", attributes: boldAttributes)
+        let authorAttributedString = NSAttributedString(string: author + " ", attributes: boldAttributes as [NSAttributedString.Key : Any])
         
         
         wordsArray.forEach {
