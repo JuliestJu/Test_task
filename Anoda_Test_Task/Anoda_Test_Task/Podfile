@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Anoda_Test_Task' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'Kingfisher', '~> 5.0'
+  
+  # Pods for Anoda_Test_Task
+  
+  target 'Anoda_Test_TaskTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+  
+  target 'Anoda_Test_TaskUITests' do
+    # Pods for testing
+  end
+  
+end
