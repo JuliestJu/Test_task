@@ -75,7 +75,7 @@ final class CellDescriptionView: UIView {
         
     }
     
-    func createLikedByString(usersWhoLiked: [String]) -> NSAttributedString {
+   private func createLikedByString(usersWhoLiked: [String]) -> NSAttributedString {
         var finalString = NSAttributedString()
         
         let regularAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Regular", size: 15)]
@@ -101,7 +101,7 @@ final class CellDescriptionView: UIView {
         }
     }
     
-    func createDescriptionString(author: String, description: String) -> NSAttributedString {
+   private func createDescriptionString(author: String, description: String) -> NSAttributedString {
         var descrString: [NSAttributedString] = []
         var finalString = NSAttributedString()
         

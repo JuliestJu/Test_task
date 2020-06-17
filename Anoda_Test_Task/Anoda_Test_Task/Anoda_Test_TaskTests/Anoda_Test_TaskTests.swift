@@ -39,25 +39,11 @@ class Anoda_Test_TaskTests: XCTestCase {
     
     func testTimeDiffing() {
         let oldDate = Date(timeIntervalSince1970: 1592229090)
-        let newDate = Date(timeIntervalSince1970: 1592229210)
+        let newDate = Date(timeIntervalSince1970: 1592229150)
         let diff = String.getDiffTime(olderDate: oldDate, newerDate: newDate)
-        XCTAssertTrue("2 minutes ago" == diff!, "Time difference isn't valid")
+        XCTAssertTrue("1 minute ago" == diff!, "Time difference isn't valid")
     }
-    
-    func testCreateLikedByString() {
-        let cellDescrView = CellDescriptionView()
-        let usersArray = ["Vasya", "petya", "Sasha"]
-        let result = cellDescrView.createLikedByString(usersWhoLiked: usersArray).isKind(of: NSAttributedString.self)
-        XCTAssertTrue(result)
-    }
-    
-    func testCreateDescriptionString() {
-        let cellDescrView = CellDescriptionView()
-        let input = ("Lena", "Beautiful")
-        let result = cellDescrView.createDescriptionString(author: input.0, description: input.1).isKind(of: NSAttributedString.self)
-        XCTAssertTrue(result)
-    }
-    
+        
     func testCalculateLikes() {
         let cellDescrView = CellDescriptionView()
         let usersArray = ["Vasya", "petya", "Sasha"]

@@ -23,34 +23,62 @@ extension String {
         let componentsLeftTime = formatter.calendar!.dateComponents([.year, .month, .day, .hour, .minute ], from: older, to: newer)
         let year = componentsLeftTime.year ?? 0
         if  year > 0 {
-            let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u years ago", comment: ""), year)
-            return resultFormatingString
+            if year == 1 {
+                let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u years ago", comment: ""), year)
+                return resultFormatingString
+            } else {
+                let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u years ago", comment: ""), year)
+                return resultFormatingString
+            }
         }
         let month = componentsLeftTime.month ?? 0
         if  month > 0 {
-            let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u months ago", comment: ""), month)
-            return resultFormatingString
+            if month == 1 {
+                let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u month ago", comment: ""), month)
+                return resultFormatingString
+            } else {
+                let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u month ago", comment: ""), month)
+                return resultFormatingString
+            }
         }
         
         let day = componentsLeftTime.day ?? 0
         if  day > 0 {
-            let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u days ago", comment: ""), day)
-            return resultFormatingString
+            if day == 1 {
+                let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u day ago", comment: ""), day)
+                return resultFormatingString
+            } else {
+                let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u days ago", comment: ""), day)
+                return resultFormatingString
+            }
         }
+        
         let hour = componentsLeftTime.hour ?? 0
         if  hour > 0 {
-            let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u hours ago", comment: ""), hour)
-            return resultFormatingString
+            if day == 1 {
+                let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u hour ago", comment: ""), hour)
+                return resultFormatingString
+            } else {
+                let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u hours ago", comment: ""), hour)
+                return resultFormatingString
+            }
+            
         }
         
         let minute = componentsLeftTime.minute ?? 0
         if  minute > 0 {
-            let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u minutes ago", comment: ""), minute)
-            return resultFormatingString
+            if minute == 1 {
+                let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u minute ago", comment: ""), minute)
+                return resultFormatingString
+            } else {
+                let resultFormatingString = String.localizedStringWithFormat(NSLocalizedString("%u minutes ago", comment: ""), minute)
+                return resultFormatingString
+            }
         }
         return nil
         
     }
+    
     func indexDistance(of character: Character) -> Int? {
         guard let index = firstIndex(of: character) else { return nil }
         return distance(from: startIndex, to: index)
