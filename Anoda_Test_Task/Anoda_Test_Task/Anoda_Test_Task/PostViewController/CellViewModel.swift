@@ -30,9 +30,16 @@ final class CellViewModel {
         self.getCellObjects()
     }
     
+    // MARK: - Public Methods
+    
+    private func getCellObjects() {
+        guard let data = jsonParcer.parseJSON(file: "json") else { return }
+        self.cellData  = data.map { self.createCellDataObject($0)}
+    }
+    
     // MARK: - Public methods
     
-    func createCellDataObject(_ model: DataModel) -> PostModel {
+    private func createCellDataObject(_ model: DataModel) -> PostModel {
         var cellDataObject = PostModel()
         cellDataObject.userName = model.author.username
         cellDataObject.location = model.location
@@ -43,13 +50,6 @@ final class CellViewModel {
         cellDataObject.createdTime = self.makeTimeDiffString(timeStamp: Int(model.createdTime)!)!
         
         return cellDataObject
-    }
-    
-    // MARK: - Private Methods
-    
-    private func getCellObjects() {
-        guard let data = jsonParcer.parseJSON(file: "json") else { return }
-        self.cellData  = data.map { self.createCellDataObject($0)}
     }
     
     private func createLikedByString(usersWhoLiked: [String]) -> NSAttributedString {

@@ -43,4 +43,9 @@ class Anoda_Test_TaskTests: XCTestCase {
         let diff = String.getDiffTime(olderDate: oldDate, newerDate: newDate)
         XCTAssertTrue("1 minute ago" == diff!, "Time difference isn't valid")
     }
+    
+    func testViewModelInitialization() {
+        let viewModel = CellViewModel()
+        XCTAssertNotNil(viewModel, "View model should not be nil")
+    }
 }
