@@ -11,9 +11,9 @@ import UIKit
 final class PostCollecttionViewCell: UICollectionViewCell {
     
     static let identifier = "PostCollecttionViewCell"
-    let headerView = CellHeaderView()
-    let cellImagesView = CellImagesView()
-    let cellDescriptionView = CellDescriptionView()
+    private let headerView = CellHeaderView()
+    private let cellImagesView = CellImagesView()
+    private let cellDescriptionView = CellDescriptionView()
     
     var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -38,12 +38,10 @@ final class PostCollecttionViewCell: UICollectionViewCell {
     
     // MARK: - Public methods
     
-    public func fill(model: DataModel) {
-        self.headerView.fill(authorImageURL: model.author.profileImage, authorName: model.author.username, locaion: model.location)
-        self.cellImagesView.fill(imageURLstrings: model.images)
-        self.cellDescriptionView.fill(likedBy: model.likedBy.map { $0.username },
-                                      description: model.description.text,
-                                      date: Int(model.createdTime)!, author: model.author.username)
+    public func fill(model: PostModel) {
+        self.headerView.fill(with: model)
+        self.cellImagesView.fill(with: model)
+        self.cellDescriptionView.fill(with: model)
     }
     
     // MARK: - Private methods

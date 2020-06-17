@@ -80,13 +80,24 @@ final class CellHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public methods
+    
+    func fill(with model: PostModel) {
+        let url = model.profileImage
+        guard let imageURL = URL.init(string: url) else { return }
+        self.authorProfileImage.kf.setImage(with: imageURL)
+        self.authorNameLabel.text = model.userName
+        self.locationLabel.text = model.location
+        self.actionButton.setImage(UIImage(named: "more"), for: .normal)
+    }
+    
     // MARK: - UI Setup
     
     private func setupUI() {
         self.snp.makeConstraints {
             $0.height.equalTo(55)
         }
-    
+        
         self.addSubview(self.authorProfileImage)
         self.authorProfileImage.snp.makeConstraints {
             $0.left.equalTo(self.snp.left).inset(12.0)
@@ -128,16 +139,5 @@ final class CellHeaderView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.authorImageConfigure()
-    }
-    
-    // MARK: - Public methods
-    
-    func fill(authorImageURL: String?, authorName: String, locaion: String) {
-        guard let url = authorImageURL else { return }
-        guard let imageURL = URL.init(string: url) else { return }
-        self.authorProfileImage.kf.setImage(with: imageURL)
-        self.authorNameLabel.text = authorName
-        self.locationLabel.text = locaion
-        self.actionButton.setImage(UIImage(named: "more"), for: .normal)
     }
 }
