@@ -10,6 +10,18 @@ import UIKit
 import SnapKit
 import Kingfisher
 
+protocol CellHeaderModel {
+    var profileImageUrl: String { get }
+    var userName: String { get }
+    var location: String { get }
+}
+
+struct CellHeaderModelImpl: CellHeaderModel  {
+    let profileImageUrl: String
+    let userName: String
+    let location: String
+}
+
 final class CellHeaderView: UIView {
     
     private var stackView: UIStackView = {
@@ -82,8 +94,8 @@ final class CellHeaderView: UIView {
     
     // MARK: - Public methods
     
-    func fill(with model: PostModel) {
-        let url = model.profileImage
+    func fill(with model: CellHeaderModel) {
+        let url = model.profileImageUrl
         guard let imageURL = URL.init(string: url) else { return }
         self.authorProfileImage.kf.setImage(with: imageURL)
         self.authorNameLabel.text = model.userName
