@@ -14,22 +14,25 @@ final class PostViewController: UIViewController, UICollectionViewDelegate, UICo
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = .init(width: self.view.frame.width, height: 650)
         layout.minimumLineSpacing = 2
-        
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
-    private lazy var dataSource: [DataModel] = {
-        self.jsonParcer.parseJSON(file: "json")!
-    }()
     private let jsonParcer = JSONParser()
+    private var postViewModel = CellViewModel()
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.reloadData()
+        self.postViewModel.updateCollection = {
+            self.collectionView.reloadData()
+        }
         self.setupUI()
     }
+    
+    // MARK: - Private methods
     
     private func setupUI() {
         self.view.addSubview(self.collectionView)
@@ -47,13 +50,14 @@ final class PostViewController: UIViewController, UICollectionViewDelegate, UICo
     // MARK: - CollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.dataSource.count
+        return self.postViewModel.cellData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollecttionViewCell.identifier, for: indexPath) as! PostCollecttionViewCell
+        let currentPost = self.postViewModel.cellData[indexPath.item]
         DispatchQueue.main.async {
-            cell.fill(model: self.dataSource[indexPath.item])
+            cell.fill(model: currentPost)
         }
         return cell
     }

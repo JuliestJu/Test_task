@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 final class CellImagesView: UIView, UIScrollViewDelegate {
-   
+    
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.isPagingEnabled = true
@@ -79,9 +79,9 @@ final class CellImagesView: UIView, UIScrollViewDelegate {
     
     // MARK: - Public methods
     
-    func fill(imageURLstrings: [String]) {
-        self.arrangeScrollView(images: imageURLstrings, scrollView: self.scrollView)
-        self.pageControl.numberOfPages = imageURLstrings.count
+    func fill(with model: PostModel) {
+        self.arrangeScrollView(images: model.images, scrollView: self.scrollView)
+        self.pageControl.numberOfPages = model.images.count
     }
     
     // MARK: - UI Setup

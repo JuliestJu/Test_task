@@ -25,6 +25,7 @@
 		CDB1F3AA249504D3008B31D2 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB1F3A9249504D3008B31D2 /* NunitoSans-Bold.ttf */; };
 		CDB1F3AC249504E8008B31D2 /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB1F3AB249504E8008B31D2 /* NunitoSans-ExtraLight.ttf */; };
 		CDB1F3AE249504F8008B31D2 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB1F3AD249504F8008B31D2 /* NunitoSans-Regular.ttf */; };
+		CDD0AA2B2499EE3900DC93B1 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD0AA2A2499EE3900DC93B1 /* CellViewModel.swift */; };
 		CDDFBBFE2490166C009B4383 /* CellDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBBFD2490166C009B4383 /* CellDescriptionView.swift */; };
 		CDDFBC0024912179009B4383 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBBFF24912179009B4383 /* String+Extension.swift */; };
 		CDDFBC03249162A2009B4383 /* PostCollecttionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBC02249162A2009B4383 /* PostCollecttionViewCell.swift */; };
@@ -69,6 +70,7 @@
 		CDB1F3A9249504D3008B31D2 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
 		CDB1F3AB249504E8008B31D2 /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
 		CDB1F3AD249504F8008B31D2 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
+		CDD0AA2A2499EE3900DC93B1 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		CDDFBBFD2490166C009B4383 /* CellDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDescriptionView.swift; sourceTree = "<group>"; };
 		CDDFBBFF24912179009B4383 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CDDFBC02249162A2009B4383 /* PostCollecttionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollecttionViewCell.swift; sourceTree = "<group>"; };
@@ -190,14 +192,14 @@
 		CD76050C248E25E4005807D5 /* Anoda_Test_Task */ = {
 			isa = PBXGroup;
 			children = (
-				CDD0AA272499E7E300DC93B1 /* JSON */,
 				CDDFBC0124916249009B4383 /* PostViewController */,
 				CD4BA44924923061005E4E9D /* Model */,
-				CDB1F3952493EE53008B31D2 /* Parser */,
+				CDB1F3952493EE53008B31D2 /* ParserService */,
+				CDD0AA272499E7E300DC93B1 /* JSON */,
 				CD4BA44A2492307C005E4E9D /* Extensions */,
 				CD4BA44B249230A0005E4E9D /* App */,
-				CD76051B248E25E5005807D5 /* Info.plist */,
 				CD66DDC5248E9C2900E08CA7 /* Fonts */,
+				CD76051B248E25E5005807D5 /* Info.plist */,
 			);
 			path = Anoda_Test_Task;
 			sourceTree = "<group>";
@@ -211,12 +213,12 @@
 			path = Anoda_Test_TaskTests;
 			sourceTree = "<group>";
 		};
-		CDB1F3952493EE53008B31D2 /* Parser */ = {
+		CDB1F3952493EE53008B31D2 /* ParserService */ = {
 			isa = PBXGroup;
 			children = (
 				CDB1F3962493EE70008B31D2 /* JSONParser.swift */,
 			);
-			path = Parser;
+			path = ParserService;
 			sourceTree = "<group>";
 		};
 		CDD0AA272499E7E300DC93B1 /* JSON */ = {
@@ -230,9 +232,10 @@
 		CDDFBC0124916249009B4383 /* PostViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CD66DDC2248E938300E08CA7 /* ImageCell */,
 				CD760511248E25E4005807D5 /* PostViewController.swift */,
+				CDD0AA2A2499EE3900DC93B1 /* CellViewModel.swift */,
 				CDDFBC02249162A2009B4383 /* PostCollecttionViewCell.swift */,
+				CD66DDC2248E938300E08CA7 /* ImageCell */,
 			);
 			path = PostViewController;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				CD76050E248E25E4005807D5 /* AppDelegate.swift in Sources */,
 				CD760510248E25E4005807D5 /* SceneDelegate.swift in Sources */,
 				CDB1F3992494C03E008B31D2 /* AttributedString+Extension.swift in Sources */,
+				CDD0AA2B2499EE3900DC93B1 /* CellViewModel.swift in Sources */,
 				CD66DDBF248E315E00E08CA7 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
