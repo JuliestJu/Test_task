@@ -19,17 +19,32 @@ final class PostViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
-    private let jsonParcer = JSONParser()
-    private var postViewModel = CellViewModel()
+    
+    private let postViewModel: PostViewModel
+    private var postModels: [PostModel]?
+    
+    init(postViewModel: PostViewModel) {
+        self.postViewModel = postViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Life Cycle
+    override func loadView() {
+        super.loadView()
+        self.setupUI()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.postViewModel.updateCollection = {
-            self.collectionView.reloadData()
+        self.postViewModel.getPosts { [weak self] in
+            self?.postModels = $0
+            self?.collectionView.reloadData()
         }
-        self.setupUI()
+        
     }
     
     // MARK: - Private methods
@@ -50,15 +65,14 @@ final class PostViewController: UIViewController, UICollectionViewDelegate, UICo
     // MARK: - CollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.postViewModel.cellData.count
+        return self.postModels?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollecttionViewCell.identifier, for: indexPath) as! PostCollecttionViewCell
-        let currentPost = self.postViewModel.cellData[indexPath.item]
-        DispatchQueue.main.async {
-            cell.fill(model: currentPost)
-        }
+        let currentPost = self.postModels?[indexPath.item]
+        currentPost.map(cell.fill)
+        
         return cell
     }
 }

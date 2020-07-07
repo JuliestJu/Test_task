@@ -9,6 +9,14 @@
 import UIKit
 import Kingfisher
 
+protocol CellImagesModel {
+    var imagePaths: [String] { get }
+}
+
+struct CellImagesModelImpl: CellImagesModel {
+    let imagePaths: [String]
+}
+
 final class CellImagesView: UIView, UIScrollViewDelegate {
     
     private var scrollView: UIScrollView = {
@@ -56,6 +64,7 @@ final class CellImagesView: UIView, UIScrollViewDelegate {
         let pageControl = UIPageControl()
         pageControl.currentPageIndicatorTintColor = .systemBlue
         pageControl.pageIndicatorTintColor = .lightGray
+        pageControl.isUserInteractionEnabled = false
         pageControl.currentPage = 0
         return pageControl
     }()
@@ -79,9 +88,9 @@ final class CellImagesView: UIView, UIScrollViewDelegate {
     
     // MARK: - Public methods
     
-    func fill(with model: PostModel) {
-        self.arrangeScrollView(images: model.images, scrollView: self.scrollView)
-        self.pageControl.numberOfPages = model.images.count
+    func fill(with model: CellImagesModel) {
+        self.arrangeScrollView(images: model.imagePaths)
+        self.pageControl.numberOfPages = model.imagePaths.count
     }
     
     // MARK: - UI Setup
@@ -145,9 +154,10 @@ final class CellImagesView: UIView, UIScrollViewDelegate {
         self.layoutIfNeeded()
     }
     
-    private func arrangeScrollView(images: [String], scrollView: UIScrollView) {
-        let imagesURLs = images.map { URL(string: $0) }
-        var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+    private func arrangeScrollView(images: [String]) {
+        let scrollView = self.scrollView
+        let imagesURLs = images.compactMap(URL.init)
+        var frame = CGRect.zero
         for index in 0..<imagesURLs.count {
             frame.origin.x = scrollView.frame.size.width * CGFloat(index)
             frame.size = scrollView.frame.size
@@ -157,6 +167,7 @@ final class CellImagesView: UIView, UIScrollViewDelegate {
             imageView.kf.setImage(with: imagesURLs[index])
             scrollView.addSubview(imageView)
         }
+        
         scrollView.contentSize = CGSize(width: scrollView.frame.size.width * CGFloat(images.count),
                                         height: scrollView.frame.size.height)
         scrollView.delegate = self

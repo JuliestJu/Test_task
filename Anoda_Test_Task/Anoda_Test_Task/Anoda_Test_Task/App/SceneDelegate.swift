@@ -9,12 +9,12 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-       self.window = UIWindow(windowScene: UIWindowScene(session: session, connectionOptions: connectionOptions))
-        self.window?.rootViewController = PostViewController()
+        self.window = UIWindow(windowScene: UIWindowScene(session: session, connectionOptions: connectionOptions))
+        self.window?.rootViewController = PostViewController(postViewModel: PostViewModelImpl())
         self.window?.makeKeyAndVisible()
     }
 }
