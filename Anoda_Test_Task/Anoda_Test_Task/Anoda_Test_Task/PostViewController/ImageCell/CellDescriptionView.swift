@@ -65,7 +65,7 @@ final class CellDescriptionView: UIView {
         self.likedByLabel.attributedText = self.createLikedByString(model.peopleWhoLiked)
         self.postDescriptionLabel.attributedText = self.createDescriptionString(author: model.author,
                                                                                 description: model.description)
-        self.createdTimeLabel.text = model.createdTime
+        self.createdTimeLabel.text = self.makeTimeDiffString(timeStamp: model.createdTime)
     }
     
     // MARK: - Private Methods
@@ -84,12 +84,12 @@ final class CellDescriptionView: UIView {
     
     private func createLikedByString(_ usersWhoLiked: [String]) -> NSAttributedString {
         var finalString = NSAttributedString()
-
+        
         let regularAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Regular", size: 15)]
         let boldAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 15)]
-
+        
         let likesCalculated = self.calculateLikes(from: usersWhoLiked)
-
+        
         let likedByString = NSAttributedString(string: "Liked by ",
                                                attributes: regularAttributes as [NSAttributedString.Key : Any])
         let firstThreeLikers = NSAttributedString(string: likesCalculated.0.joined(separator: ", "),
@@ -98,7 +98,7 @@ final class CellDescriptionView: UIView {
                                            attributes: regularAttributes as [NSAttributedString.Key : Any])
         let othersString = NSAttributedString(string: likesCalculated.1 + " others",
                                               attributes: boldAttributes as [NSAttributedString.Key : Any])
-
+        
         if usersWhoLiked.count > 3 {
             finalString = likedByString + firstThreeLikers + andString + othersString
             return finalString
@@ -119,16 +119,16 @@ final class CellDescriptionView: UIView {
     private func createDescriptionString(author: String, description: String) -> NSAttributedString {
         var descrString: [NSAttributedString] = []
         var finalString = NSAttributedString()
-
+        
         let wordsArray = description.components(separatedBy: .whitespaces)
-
+        
         let blueRegularAtributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Regular", size: 15),
                                     NSAttributedString.Key.foregroundColor: UIColor.systemBlue]
         let regularAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Regular", size: 15)]
         let boldAttributes = [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 15)]
         let authorAttributedString = NSAttributedString(string: author + " ", attributes: boldAttributes as [NSAttributedString.Key : Any])
-
-
+        
+        
         wordsArray.forEach {
             if $0.contains("#") || $0.contains("@") {
                 descrString.append(NSAttributedString(string: $0, attributes: blueRegularAtributes as [NSAttributedString.Key : Any]))
@@ -136,13 +136,16 @@ final class CellDescriptionView: UIView {
                 descrString.append(NSAttributedString(string: $0, attributes: regularAttributes as [NSAttributedString.Key : Any]))
             }
         }
-
+        
         finalString = authorAttributedString + descrString.joined(with: " ")
         return finalString
     }
-
-    private func makeTimeDiffString(timeStamp: Int) -> String? {
-        let madeAt = Date(timeIntervalSince1970: Double(timeStamp))
+    
+    private func makeTimeDiffString(timeStamp: String) -> String? {
+        var madeAt = Date()
+        if let timeStampInt = Double(timeStamp) {
+            madeAt = Date(timeIntervalSince1970: timeStampInt)
+        }
         return String.getDiffTime(olderDate: madeAt, newerDate: Date())?.uppercased()
     }
 }
