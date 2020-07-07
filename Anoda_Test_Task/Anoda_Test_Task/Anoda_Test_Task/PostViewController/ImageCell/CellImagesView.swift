@@ -64,6 +64,7 @@ final class CellImagesView: UIView, UIScrollViewDelegate {
         let pageControl = UIPageControl()
         pageControl.currentPageIndicatorTintColor = .systemBlue
         pageControl.pageIndicatorTintColor = .lightGray
+        pageControl.isUserInteractionEnabled = false
         pageControl.currentPage = 0
         return pageControl
     }()
